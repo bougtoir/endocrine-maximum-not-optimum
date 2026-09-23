@@ -1,0 +1,10 @@
+item,type,reference,relation_to_this_work,action
+"Braess' paradox (traffic networks)",concept,"Braess D, Unternehmensforschung 1968","origin of 'Braess-like' terminology; we claim analogy only, not equivalence","cite; avoid claiming exact equivalence"
+"Biological Braess' paradox in homeostasis","prior work","Phys Rev E 98:062406 (2018), doi:10.1103/PhysRevE.98.062406","closest prior: formalizes infinitesimal-homeostasis paradox, asthma network example; ours = validated whole-body glucose–insulin–glucagon ODE with u-sweeps + loss classification","cite; differentiate"
+"Paradoxical alpha/beta-cell feedback design","prior work","Sci Rep 8:11334 (2018), doi:10.1038/s41598-018-29084-4","same endocrine circuit, paradoxical paracrine feedback dampens glucose overshoot; supports our mechanism interpretation","cite"
+"Revised Sorensen model","model","Panunzi et al., PLoS ONE 15(8):e0237215 (2020)","primary model; CC-BY; frozen upstream code + parameters","cite; document freeze + SHA-256"
+"Hormesis / non-monotonic dose-response","concept","e.g. Calabrese & Baldwin hormesis literature","non-monotonic dose-response is known; our novelty is interior optimum of endocrine feedback efficacy under composite homeostatic loss in a validated human model","cite one representative review; frame novelty modestly"
+"yoshika PK-PD package (author)","prior work","Onishi et al., Array 2026, doi:10.1016/j.array.2026.101106","author prior paper; methodological continuity","cite"
+"Chaotic three-body PK toolkit (author)","prior work","Onishi et al., Chaos Solitons Fractals 2026, doi:10.1016/j.chaos.2026.119159","author prior paper","cite"
+"Paper 1 of series (reaction capacity -> flux redistribution)","companion","unpublished/companion manuscript","this paper stands alone; cross-reference only briefly","mention as companion work if allowed"
+"OSP glucose-insulin model","rejected model","Open Systems Pharmacology MoBi .mbp3","rejected: Windows/.NET toolchain, not reproducible on Linux","documented in Phase 0 report"

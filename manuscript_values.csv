@@ -1,0 +1,351 @@
+key,value,source
+Insulin signalling (global)|fasting|class,TypeIII,results/scans/*_classification.csv
+Insulin signalling (global)|fasting|u_opt,0.15,results/scans/*_classification.csv
+Insulin signalling (global)|fasting|L0,0.0207154554630775,results/scans/*_classification.csv
+Insulin signalling (global)|fasting|Lopt,0.0206976382737128,results/scans/*_classification.csv
+Insulin signalling (global)|fasting|L1,0.0208929700800162,results/scans/*_classification.csv
+Insulin signalling (global)|fasting|G0,,results/scans/*_classification.csv
+Insulin signalling (global)|fasting|G1,,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|fasting|class,TypeIII,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|fasting|u_opt,0.55,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|fasting|L0,0.0207154554630775,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|fasting|Lopt,0.0205288197816084,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|fasting|L1,0.020583294340447,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|fasting|G0,,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|fasting|G1,,results/scans/*_classification.csv
+Insulin secretion (potentiation)|fasting|class,Type0,results/scans/*_classification.csv
+Insulin secretion (potentiation)|fasting|u_opt,0.0,results/scans/*_classification.csv
+Insulin secretion (potentiation)|fasting|L0,0.0207154554630775,results/scans/*_classification.csv
+Insulin secretion (potentiation)|fasting|Lopt,0.0207154554630775,results/scans/*_classification.csv
+Insulin secretion (potentiation)|fasting|L1,3.9041597264207177,results/scans/*_classification.csv
+Insulin secretion (potentiation)|fasting|G0,,results/scans/*_classification.csv
+Insulin secretion (potentiation)|fasting|G1,,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|fasting|class,Type0,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|fasting|u_opt,0.0,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|fasting|L0,0.0207154554630775,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|fasting|Lopt,0.0207154554630775,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|fasting|L1,0.4442991555089564,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|fasting|G0,,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|fasting|G1,,results/scans/*_classification.csv
+Insulin signalling (inhibition)|fasting|class,Type0,results/scans/*_classification.csv
+Insulin signalling (inhibition)|fasting|u_opt,0.95,results/scans/*_classification.csv
+Insulin signalling (inhibition)|fasting|L0,0.0207154554630775,results/scans/*_classification.csv
+Insulin signalling (inhibition)|fasting|Lopt,0.0203144832965948,results/scans/*_classification.csv
+Insulin signalling (inhibition)|fasting|L1,0.0204794153094164,results/scans/*_classification.csv
+Insulin signalling (inhibition)|fasting|G0,,results/scans/*_classification.csv
+Insulin signalling (inhibition)|fasting|G1,,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|fasting|class,TypeIII,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|fasting|u_opt,0.1,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|fasting|L0,0.0207154554630775,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|fasting|Lopt,0.0206617816126361,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|fasting|L1,0.0208667189944172,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|fasting|G0,,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|fasting|G1,,results/scans/*_classification.csv
+Insulin secretion (impairment)|fasting|class,Type0,results/scans/*_classification.csv
+Insulin secretion (impairment)|fasting|u_opt,0.0,results/scans/*_classification.csv
+Insulin secretion (impairment)|fasting|L0,0.0207154554630775,results/scans/*_classification.csv
+Insulin secretion (impairment)|fasting|Lopt,0.0207154554630775,results/scans/*_classification.csv
+Insulin secretion (impairment)|fasting|L1,58.21511426141491,results/scans/*_classification.csv
+Insulin secretion (impairment)|fasting|G0,,results/scans/*_classification.csv
+Insulin secretion (impairment)|fasting|G1,,results/scans/*_classification.csv
+Glucagon secretion (suppression)|fasting|class,Type0,results/scans/*_classification.csv
+Glucagon secretion (suppression)|fasting|u_opt,0.0,results/scans/*_classification.csv
+Glucagon secretion (suppression)|fasting|L0,0.0207154554630775,results/scans/*_classification.csv
+Glucagon secretion (suppression)|fasting|Lopt,0.0207154554630775,results/scans/*_classification.csv
+Glucagon secretion (suppression)|fasting|L1,48.33858436866333,results/scans/*_classification.csv
+Glucagon secretion (suppression)|fasting|G0,,results/scans/*_classification.csv
+Glucagon secretion (suppression)|fasting|G1,,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|fasting|class,Type0,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|fasting|u_opt,0.0,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|fasting|L0,0.0207154554630775,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|fasting|Lopt,0.0207154554630775,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|fasting|L1,0.0215161182201225,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|fasting|G0,,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|fasting|G1,,results/scans/*_classification.csv
+Insulin signalling (hepatic)|fasting|class,TypeIII,results/scans/*_classification.csv
+Insulin signalling (hepatic)|fasting|u_opt,0.95,results/scans/*_classification.csv
+Insulin signalling (hepatic)|fasting|L0,0.0207154554630775,results/scans/*_classification.csv
+Insulin signalling (hepatic)|fasting|Lopt,0.0204885098300722,results/scans/*_classification.csv
+Insulin signalling (hepatic)|fasting|L1,0.0205779620589903,results/scans/*_classification.csv
+Insulin signalling (hepatic)|fasting|G0,,results/scans/*_classification.csv
+Insulin signalling (hepatic)|fasting|G1,,results/scans/*_classification.csv
+Insulin signalling (global)|ivgtt|class,Type0,results/scans/*_classification.csv
+Insulin signalling (global)|ivgtt|u_opt,0.0,results/scans/*_classification.csv
+Insulin signalling (global)|ivgtt|L0,221.07115561656065,results/scans/*_classification.csv
+Insulin signalling (global)|ivgtt|Lopt,221.07115561656065,results/scans/*_classification.csv
+Insulin signalling (global)|ivgtt|L1,311.7347634823328,results/scans/*_classification.csv
+Insulin signalling (global)|ivgtt|G0,,results/scans/*_classification.csv
+Insulin signalling (global)|ivgtt|G1,,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivgtt|class,TypeI,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivgtt|u_opt,1.0,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivgtt|L0,221.07115561656065,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivgtt|Lopt,185.71971839556525,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivgtt|L1,185.71971839556525,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivgtt|G0,,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivgtt|G1,,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivgtt|class,Type0,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivgtt|u_opt,0.0,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivgtt|L0,221.07115561656065,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivgtt|Lopt,221.07115561656065,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivgtt|L1,384.6592528893307,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivgtt|G0,,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivgtt|G1,,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivgtt|class,TypeI,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivgtt|u_opt,0.89,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivgtt|L0,221.07115561656065,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivgtt|Lopt,199.25431748752743,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivgtt|L1,206.50766599281835,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivgtt|G0,21.816838129033187,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivgtt|G1,7.253348505290887,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivgtt|class,TypeII,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivgtt|u_opt,0.7,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivgtt|L0,221.07115561656065,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivgtt|Lopt,47.242800834178375,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivgtt|L1,52.02794477624436,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivgtt|G0,173.82835478238226,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivgtt|G1,4.785143942065986,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivgtt|class,Type0,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivgtt|u_opt,0.0,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivgtt|L0,221.07115561656065,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivgtt|Lopt,221.07115561656065,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivgtt|L1,267.215105008049,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivgtt|G0,,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivgtt|G1,,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivgtt|class,TypeII,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivgtt|u_opt,0.7400000000000001,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivgtt|L0,221.07115561656065,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivgtt|Lopt,44.368434389430256,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivgtt|L1,82.44027275200561,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivgtt|G0,176.70272122713038,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivgtt|G1,38.07183836257536,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivgtt|class,Type0,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivgtt|u_opt,0.0,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivgtt|L0,221.07115561656065,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivgtt|Lopt,221.07115561656065,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivgtt|L1,414.7462148236867,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivgtt|G0,,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivgtt|G1,,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivgtt|class,Type0,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivgtt|u_opt,0.0,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivgtt|L0,221.07115561656065,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivgtt|Lopt,221.07115561656065,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivgtt|L1,308.844394510924,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivgtt|G0,,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivgtt|G1,,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivgtt|class,Type0,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivgtt|u_opt,0.0,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivgtt|L0,221.07115561656065,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivgtt|Lopt,221.07115561656065,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivgtt|L1,238.03190061039436,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivgtt|G0,,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivgtt|G1,,results/scans/*_classification.csv
+Insulin signalling (global)|ogtt|class,TypeI,results/scans/*_classification.csv
+Insulin signalling (global)|ogtt|u_opt,0.9625,results/scans/*_classification.csv
+Insulin signalling (global)|ogtt|L0,6.809072323411645,results/scans/*_classification.csv
+Insulin signalling (global)|ogtt|Lopt,4.320404771043499,results/scans/*_classification.csv
+Insulin signalling (global)|ogtt|L1,4.35998806745277,results/scans/*_classification.csv
+Insulin signalling (global)|ogtt|G0,2.4886675523681454,results/scans/*_classification.csv
+Insulin signalling (global)|ogtt|G1,0.0395832964092708,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ogtt|class,TypeII*,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ogtt|u_opt,0.74,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ogtt|L0,6.809072323411645,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ogtt|Lopt,6.418815183537122,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ogtt|L1,6.462074275484338,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ogtt|G0,0.3902571398745227,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ogtt|G1,0.043259091947216,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ogtt|class,TypeI,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ogtt|u_opt,1.0,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ogtt|L0,6.809072323411645,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ogtt|Lopt,3.933136691129524,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ogtt|L1,3.933136691129524,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ogtt|G0,,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ogtt|G1,,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ogtt|class,TypeII,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ogtt|u_opt,0.91,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ogtt|L0,6.809072323411645,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ogtt|Lopt,6.432689795407548,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ogtt|L1,6.709051963941552,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ogtt|G0,0.3763825280040969,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ogtt|G1,0.2763621685340043,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ogtt|class,Type0,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ogtt|u_opt,0.05,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ogtt|L0,6.809072323411645,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ogtt|Lopt,6.732662363453406,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ogtt|L1,85.18038826723715,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ogtt|G0,,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ogtt|G1,,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ogtt|class,TypeII,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ogtt|u_opt,0.03,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ogtt|L0,6.809072323411645,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ogtt|Lopt,6.477076428925854,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ogtt|L1,6.73578965336819,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ogtt|G0,0.3319958944857903,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ogtt|G1,0.258713224442336,results/scans/*_classification.csv
+Insulin secretion (impairment)|ogtt|class,Type0,results/scans/*_classification.csv
+Insulin secretion (impairment)|ogtt|u_opt,0.05,results/scans/*_classification.csv
+Insulin secretion (impairment)|ogtt|L0,6.809072323411645,results/scans/*_classification.csv
+Insulin secretion (impairment)|ogtt|Lopt,6.703121684758783,results/scans/*_classification.csv
+Insulin secretion (impairment)|ogtt|L1,217.87161890655165,results/scans/*_classification.csv
+Insulin secretion (impairment)|ogtt|G0,,results/scans/*_classification.csv
+Insulin secretion (impairment)|ogtt|G1,,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ogtt|class,TypeII,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ogtt|u_opt,0.9025,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ogtt|L0,6.809072323411645,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ogtt|Lopt,6.0539216803635725,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ogtt|L1,6.284755101801151,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ogtt|G0,0.7551506430480721,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ogtt|G1,0.2308334214375786,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ogtt|class,TypeI,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ogtt|u_opt,1.0,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ogtt|L0,6.809072323411645,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ogtt|Lopt,4.228662761866561,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ogtt|L1,4.228662761866561,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ogtt|G0,,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ogtt|G1,,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ogtt|class,TypeII*,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ogtt|u_opt,0.89,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ogtt|L0,6.809072323411645,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ogtt|Lopt,6.183546182794951,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ogtt|L1,6.256183383239627,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ogtt|G0,0.6255261406166941,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ogtt|G1,0.0726372004446762,results/scans/*_classification.csv
+Insulin signalling (global)|ivitt|class,Type0,results/scans/*_classification.csv
+Insulin signalling (global)|ivitt|u_opt,0.0,results/scans/*_classification.csv
+Insulin signalling (global)|ivitt|L0,69.18036601508939,results/scans/*_classification.csv
+Insulin signalling (global)|ivitt|Lopt,69.18036601508939,results/scans/*_classification.csv
+Insulin signalling (global)|ivitt|L1,149.90451411232627,results/scans/*_classification.csv
+Insulin signalling (global)|ivitt|G0,,results/scans/*_classification.csv
+Insulin signalling (global)|ivitt|G1,,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivitt|class,TypeI,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivitt|u_opt,1.0,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivitt|L0,69.18036601508939,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivitt|Lopt,56.28692782171502,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivitt|L1,56.28692782171502,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivitt|G0,,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|ivitt|G1,,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivitt|class,Type0,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivitt|u_opt,0.0,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivitt|L0,69.18036601508939,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivitt|Lopt,69.18036601508939,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivitt|L1,174.29932713289557,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivitt|G0,,results/scans/*_classification.csv
+Insulin secretion (potentiation)|ivitt|G1,,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivitt|class,TypeI,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivitt|u_opt,0.9,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivitt|L0,69.18036601508939,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivitt|Lopt,54.21133157671306,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivitt|L1,54.34065633416111,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivitt|G0,14.969034438376326,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|ivitt|G1,0.129324757448046,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivitt|class,TypeI,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivitt|u_opt,1.0,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivitt|L0,69.18036601508939,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivitt|Lopt,0.8855582651461509,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivitt|L1,0.8855582651461509,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivitt|G0,,results/scans/*_classification.csv
+Insulin signalling (inhibition)|ivitt|G1,,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivitt|class,Type0,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivitt|u_opt,0.0,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivitt|L0,69.18036601508939,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivitt|Lopt,69.18036601508939,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivitt|L1,91.86792800571376,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivitt|G0,,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|ivitt|G1,,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivitt|class,TypeI,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivitt|u_opt,1.0,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivitt|L0,69.18036601508939,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivitt|Lopt,20.282953824557445,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivitt|L1,20.282953824557445,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivitt|G0,,results/scans/*_classification.csv
+Insulin secretion (impairment)|ivitt|G1,,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivitt|class,Type0,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivitt|u_opt,0.0,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivitt|L0,69.18036601508939,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivitt|Lopt,69.18036601508939,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivitt|L1,410.1860473250126,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivitt|G0,,results/scans/*_classification.csv
+Glucagon secretion (suppression)|ivitt|G1,,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivitt|class,Type0,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivitt|u_opt,0.0,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivitt|L0,69.18036601508939,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivitt|Lopt,69.18036601508939,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivitt|L1,147.41132208837115,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivitt|G0,,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|ivitt|G1,,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivitt|class,Type0,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivitt|u_opt,0.0,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivitt|L0,69.18036601508939,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivitt|Lopt,69.18036601508939,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivitt|L1,73.63233173100079,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivitt|G0,,results/scans/*_classification.csv
+Insulin signalling (hepatic)|ivitt|G1,,results/scans/*_classification.csv
+Insulin signalling (global)|civii|class,Type0,results/scans/*_classification.csv
+Insulin signalling (global)|civii|u_opt,0.0,results/scans/*_classification.csv
+Insulin signalling (global)|civii|L0,4.997180791405992,results/scans/*_classification.csv
+Insulin signalling (global)|civii|Lopt,4.997180791405992,results/scans/*_classification.csv
+Insulin signalling (global)|civii|L1,9.553308156609129,results/scans/*_classification.csv
+Insulin signalling (global)|civii|G0,,results/scans/*_classification.csv
+Insulin signalling (global)|civii|G1,,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|civii|class,TypeI,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|civii|u_opt,0.865,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|civii|L0,4.997180791405992,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|civii|Lopt,4.739821108254861,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|civii|L1,4.8101992984790565,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|civii|G0,0.2573596831511304,results/scans/*_classification.csv
+Glucagon signalling (hepatic HGP)|civii|G1,0.0703781902241953,results/scans/*_classification.csv
+Insulin secretion (potentiation)|civii|class,TypeII,results/scans/*_classification.csv
+Insulin secretion (potentiation)|civii|u_opt,0.52,results/scans/*_classification.csv
+Insulin secretion (potentiation)|civii|L0,4.997180791405992,results/scans/*_classification.csv
+Insulin secretion (potentiation)|civii|Lopt,3.781370094788012,results/scans/*_classification.csv
+Insulin secretion (potentiation)|civii|L1,27.71917716522804,results/scans/*_classification.csv
+Insulin secretion (potentiation)|civii|G0,1.2158106966179796,results/scans/*_classification.csv
+Insulin secretion (potentiation)|civii|G1,23.937807070440027,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|civii|class,TypeII*,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|civii|u_opt,0.5900000000000001,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|civii|L0,4.997180791405992,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|civii|Lopt,4.583586177581677,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|civii|L1,4.66514943866088,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|civii|G0,0.4135946138243147,results/scans/*_classification.csv
+Glucagon secretion (potentiation)|civii|G1,0.0815632610792027,results/scans/*_classification.csv
+Insulin signalling (inhibition)|civii|class,TypeI,results/scans/*_classification.csv
+Insulin signalling (inhibition)|civii|u_opt,1.0,results/scans/*_classification.csv
+Insulin signalling (inhibition)|civii|L0,4.997180791405992,results/scans/*_classification.csv
+Insulin signalling (inhibition)|civii|Lopt,2.897285376030188,results/scans/*_classification.csv
+Insulin signalling (inhibition)|civii|L1,2.897285376030188,results/scans/*_classification.csv
+Insulin signalling (inhibition)|civii|G0,,results/scans/*_classification.csv
+Insulin signalling (inhibition)|civii|G1,,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|civii|class,Type0,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|civii|u_opt,0.05,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|civii|L0,4.997180791405992,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|civii|Lopt,4.982775499910963,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|civii|L1,5.132416698542221,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|civii|G0,,results/scans/*_classification.csv
+Glucagon signalling (inhibition)|civii|G1,,results/scans/*_classification.csv
+Insulin secretion (impairment)|civii|class,TypeII,results/scans/*_classification.csv
+Insulin secretion (impairment)|civii|u_opt,0.2699999999999999,results/scans/*_classification.csv
+Insulin secretion (impairment)|civii|L0,4.997180791405992,results/scans/*_classification.csv
+Insulin secretion (impairment)|civii|Lopt,4.657663041208887,results/scans/*_classification.csv
+Insulin secretion (impairment)|civii|L1,13.54091586394278,results/scans/*_classification.csv
+Insulin secretion (impairment)|civii|G0,0.3395177501971043,results/scans/*_classification.csv
+Insulin secretion (impairment)|civii|G1,8.883252822733894,results/scans/*_classification.csv
+Glucagon secretion (suppression)|civii|class,Type0,results/scans/*_classification.csv
+Glucagon secretion (suppression)|civii|u_opt,0.55,results/scans/*_classification.csv
+Glucagon secretion (suppression)|civii|L0,4.997180791405992,results/scans/*_classification.csv
+Glucagon secretion (suppression)|civii|Lopt,4.729452765230298,results/scans/*_classification.csv
+Glucagon secretion (suppression)|civii|L1,246.4177177514269,results/scans/*_classification.csv
+Glucagon secretion (suppression)|civii|G0,,results/scans/*_classification.csv
+Glucagon secretion (suppression)|civii|G1,,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|civii|class,Type0,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|civii|u_opt,0.05,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|civii|L0,4.997180791405992,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|civii|Lopt,4.995065392395931,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|civii|L1,5.686333627466557,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|civii|G0,,results/scans/*_classification.csv
+Insulin signalling (peripheral uptake)|civii|G1,,results/scans/*_classification.csv
+Insulin signalling (hepatic)|civii|class,Type0,results/scans/*_classification.csv
+Insulin signalling (hepatic)|civii|u_opt,0.0,results/scans/*_classification.csv
+Insulin signalling (hepatic)|civii|L0,4.997180791405992,results/scans/*_classification.csv
+Insulin signalling (hepatic)|civii|Lopt,4.997180791405992,results/scans/*_classification.csv
+Insulin signalling (hepatic)|civii|L1,5.522571481834259,results/scans/*_classification.csv
+Insulin signalling (hepatic)|civii|G0,,results/scans/*_classification.csv
+Insulin signalling (hepatic)|civii|G1,,results/scans/*_classification.csv

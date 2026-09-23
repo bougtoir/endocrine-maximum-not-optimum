@@ -1,0 +1,7 @@
+intervention,challenge,rtol,losses
+insulin_secretion_inhibition,ivgtt,1e-05,230.1036;167.1950;117.2454;63.3392;88.5054
+insulin_secretion_inhibition,ivgtt,1e-07,221.0712;160.0507;108.6022;53.3062;82.4403
+insulin_signal_global_inhibition,ivgtt,1e-05,230.1036;145.1712;88.2140;54.7973;57.8769
+insulin_signal_global_inhibition,ivgtt,1e-07,221.0712;137.3452;82.5159;47.2428;52.0279
+glucagon_secretion,ogtt,1e-05,7.3442;8.1305;8.3386;8.0367;8.0581
+glucagon_secretion,ogtt,1e-07,6.8091;6.5457;6.9813;6.5729;6.7091

@@ -3,11 +3,14 @@
 CONVENTION (non-negotiable, see docs/DESIGN.md):
     u = 0  -> no exogenous modulation (baseline, multiplier = 1)
     u = 1  -> defined maximum modulation
-For every intervention the native signal is scaled by a monotone factor f(u):
+For every intervention a monotone factor f(u) sets the *action efficacy* s:
     potentiation (agonist-like):  f(u) = 1 + u*(GMAX - 1),   GMAX > 1
     inhibition   (antagonist-like): f(u) = 1 - u*(1 - GMIN), GMIN in [0,1)
-u therefore always increases the *strength* of modulation, never reverses
-direction. `native_parameter_value` recorded = effective multiplier f(u).
+For signalling interventions the model applies s to the deviation of the
+hormone-action multiplier from neutral: M_eff = 1 + s*(M - 1) (s=1 baseline,
+s>1 amplified action, s=0 complete ablation). Secretion interventions scale
+the secretion rate directly. u therefore always increases the *strength* of
+modulation, never reverses direction. `native_parameter_value` = f(u).
 """
 
 from dataclasses import dataclass, field
