@@ -410,8 +410,10 @@ doc.add_page_break()
 # Body: simple markdown -> docx renderer; wrapped lines join into paragraphs
 def add_paragraph_with_italics(text):
     p = doc.add_paragraph()
-    for seg in re.split(r"(\*[^*\s][^*]*\*)", text):
-        if seg.startswith("*") and seg.endswith("*") and len(seg) > 2:
+    for seg in re.split(r"(\*\*[^*]+\*\*|\*[^*\s][^*]*\*)", text):
+        if seg.startswith("**") and seg.endswith("**") and len(seg) > 4:
+            p.add_run(seg[2:-2]).bold = True
+        elif seg.startswith("*") and seg.endswith("*") and len(seg) > 2:
             p.add_run(seg[1:-1]).italic = True
         else:
             p.add_run(seg)
