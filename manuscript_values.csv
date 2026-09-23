@@ -299,7 +299,7 @@ Insulin secretion (potentiation)|civii|L0,4.997180791405992,results/scans/*_clas
 Insulin secretion (potentiation)|civii|Lopt,3.781370094788012,results/scans/*_classification.csv
 Insulin secretion (potentiation)|civii|L1,27.71917716522804,results/scans/*_classification.csv
 Insulin secretion (potentiation)|civii|G0,1.2158106966179796,results/scans/*_classification.csv
-Insulin secretion (potentiation)|civii|G1,23.937807070440027,results/scans/*_classification.csv
+Insulin secretion (potentiation)|civii|G1,23.937807070440023,results/scans/*_classification.csv
 Glucagon secretion (potentiation)|civii|class,TypeII*,results/scans/*_classification.csv
 Glucagon secretion (potentiation)|civii|u_opt,0.5900000000000001,results/scans/*_classification.csv
 Glucagon secretion (potentiation)|civii|L0,4.997180791405992,results/scans/*_classification.csv
@@ -327,7 +327,7 @@ Insulin secretion (impairment)|civii|L0,4.997180791405992,results/scans/*_classi
 Insulin secretion (impairment)|civii|Lopt,4.657663041208887,results/scans/*_classification.csv
 Insulin secretion (impairment)|civii|L1,13.54091586394278,results/scans/*_classification.csv
 Insulin secretion (impairment)|civii|G0,0.3395177501971043,results/scans/*_classification.csv
-Insulin secretion (impairment)|civii|G1,8.883252822733894,results/scans/*_classification.csv
+Insulin secretion (impairment)|civii|G1,8.88325282273389,results/scans/*_classification.csv
 Glucagon secretion (suppression)|civii|class,Type0,results/scans/*_classification.csv
 Glucagon secretion (suppression)|civii|u_opt,0.55,results/scans/*_classification.csv
 Glucagon secretion (suppression)|civii|L0,4.997180791405992,results/scans/*_classification.csv
