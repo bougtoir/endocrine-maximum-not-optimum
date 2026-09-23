@@ -407,17 +407,34 @@ doc.add_paragraph(f"Keywords: glucose homeostasis; insulin; glucagon; "
                   f"Braess paradox")
 doc.add_page_break()
 
-# Body: simple markdown -> docx renderer
+# Body: simple markdown -> docx renderer; wrapped lines join into paragraphs
+def add_paragraph_with_italics(text):
+    p = doc.add_paragraph()
+    for seg in re.split(r"(\*[^*\s][^*]*\*)", text):
+        if seg.startswith("*") and seg.endswith("*") and len(seg) > 2:
+            p.add_run(seg[1:-1]).italic = True
+        else:
+            p.add_run(seg)
+
+buf = []
+def flush():
+    if buf:
+        add_paragraph_with_italics(" ".join(buf))
+        buf.clear()
+
 for line in MD.split("\n"):
     if line.startswith("---") or line.startswith("title:") or \
        line.startswith("short_title") or line.startswith("word_count"):
         continue
     if line.startswith("# "):
-        doc.add_heading(line[2:], level=1)
+        flush(); doc.add_heading(line[2:], level=1)
     elif line.startswith("## "):
-        doc.add_heading(line[3:], level=2)
+        flush(); doc.add_heading(line[3:], level=2)
     elif line.strip():
-        doc.add_paragraph(line.strip())
+        buf.append(line.strip())
+    else:
+        flush()
+flush()
 
 # Tables (editable Word tables)
 doc.add_heading("Table 1. Interventions and modulation convention", level=2)
