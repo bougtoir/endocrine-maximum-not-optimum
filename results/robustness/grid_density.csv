@@ -1,10 +1,10 @@
 intervention,challenge,step,response_class,u_opt
 insulin_secretion_inhibition,ivgtt,0.1,TypeII,0.8
 insulin_secretion_inhibition,ivgtt,0.05,TypeII,0.8500000000000001
-insulin_secretion_inhibition,ivgtt,0.025,TypeII,0.8500000000000001
-insulin_signal_global_inhibition,ivgtt,0.1,TypeII*,0.8
-insulin_signal_global_inhibition,ivgtt,0.05,TypeII*,0.8
-insulin_signal_global_inhibition,ivgtt,0.025,TypeII*,0.8
-glucagon_secretion,ogtt,0.1,TypeII,0.2
-glucagon_secretion,ogtt,0.05,TypeII,0.8500000000000001
-glucagon_secretion,ogtt,0.025,TypeII,0.8500000000000001
+insulin_secretion_inhibition,ivgtt,0.025,TypeII,0.8250000000000001
+insulin_signal_global_inhibition,ivgtt,0.1,TypeII,0.7000000000000001
+insulin_signal_global_inhibition,ivgtt,0.05,TypeII,0.7000000000000001
+insulin_signal_global_inhibition,ivgtt,0.025,TypeII,0.7000000000000001
+glucagon_secretion,ogtt,0.1,TypeIII,0.6000000000000001
+glucagon_secretion,ogtt,0.05,TypeIII,0.6000000000000001
+glucagon_secretion,ogtt,0.025,TypeIII,0.6000000000000001

@@ -17,6 +17,10 @@ Date: 2026-09-23 (UTC).
   keeps the label.
 - Note: LSODA `max_step` had to be bounded in the HPT model (pulsed input
   could be stepped over by the solver) — fixed in `src/hpt_model.py`.
+- Endpoint statistics are computed on a common 0.5-min interpolated grid so
+  sample-based endpoints (SD, successive-difference RMSD) do not inherit the
+  solver's internal step sizes. Recovery time uses the max absolute excursion
+  (peak or undershoot) from basal, not only the upper excursion.
 
 ## Model validation (`results/qc/model_validation_summary.csv`)
 | variable | RMSE | bias | peak model | peak data |

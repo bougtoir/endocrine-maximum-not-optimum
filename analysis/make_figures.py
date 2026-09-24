@@ -106,10 +106,10 @@ def fig3_loss_curves():
 def fig4_trajectories():
     """Glucose trajectories at u=0, u*, u=1 for the headline cases."""
     cases = [
-        ("insulin_secretion_inhibition", "ivgtt", 0.8),
-        ("glucagon_secretion", "ogtt", 0.85),
-        ("glucagon_signal_inhibition", "ogtt", 0.1),
-        ("insulin_signal_global_inhibition", "ivgtt", 0.7),
+        ("insulin_secretion_inhibition", "ivgtt", 0.83),
+        ("insulin_signal_global_inhibition", "ivgtt", 0.71),
+        ("glucagon_secretion_inhibition", "ogtt", 0.88),
+        ("insulin_secretion", "civii", 0.51),
     ]
     fig, axes = plt.subplots(2, 2, figsize=(7.0, 4.6))
     for ax, (ivn, ch, ustar) in zip(axes.flat, cases):

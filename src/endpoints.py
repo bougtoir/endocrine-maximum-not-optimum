@@ -38,9 +38,14 @@ def glucagon_series(t, Y):
 
 def endpoint_values(t, Y, p=None, mods=None, t_start=0.0):
     tw, Yw = _window(t, Y, t_start)
-    g = glucose_series(tw, Yw)
-    ins = insulin_series(tw, Yw)
-    cgn = glucagon_series(tw, Yw)
+    # Resample to a uniform time grid so endpoint statistics (SD, successive
+    # differences) do not depend on the solver's internal step sizes.
+    dt_eval = 0.5  # min; fixed across all runs
+    tu = np.arange(tw[0], tw[-1] + 1e-9, dt_eval)
+    g = np.interp(tu, tw, glucose_series(tw, Yw))
+    ins = np.interp(tu, tw, insulin_series(tw, Yw))
+    cgn = np.interp(tu, tw, glucagon_series(tw, Yw))
+    tw = tu
     dur = tw[-1] - tw[0]
 
     hypo = np.trapezoid(np.clip(GLUCOSE_HYPO_MGDL - g, 0, None), tw)
@@ -55,12 +60,11 @@ def endpoint_values(t, Y, p=None, mods=None, t_start=0.0):
     # recovery time: last time |g - basal| exceeds 10% of the peak excursion;
     # requires a genuine excursion (>0.5 mg/dL) — otherwise the system never
     # left the band and recovery time is 0 by definition.
-    exc = peak - base
+    exc = max(abs(peak - base), abs(nadir - base))
     rec = 0.0
     if exc > 0.5:
-        thr = base + 0.1 * exc
-        above = np.where(g > thr)[0]
-        rec = tw[above[-1]] - tw[0] if len(above) else 0.0
+        outside = np.where(np.abs(g - base) > 0.1 * exc)[0]
+        rec = tw[outside[-1]] - tw[0] if len(outside) else 0.0
     # overshoot below baseline after challenge
     overshoot = max(0.0, base - nadir)
     # variability: SD of glucose in window + successive-difference RMS

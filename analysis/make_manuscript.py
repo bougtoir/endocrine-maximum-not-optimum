@@ -54,6 +54,9 @@ gs_ogtt = L("glucagon_secretion", "ogtt", "u_opt")
 gs_Lo = L("glucagon_secretion", "ogtt", "loss_opt")
 gs_L0 = L("glucagon_secretion", "ogtt", "loss_baseline")
 gsi_ogtt = L("glucagon_signal_inhibition", "ogtt", "u_opt")
+gci_ogtt = L("glucagon_secretion_inhibition", "ogtt", "u_opt")
+gci_Lo = L("glucagon_secretion_inhibition", "ogtt", "loss_opt")
+gci_L1 = L("glucagon_secretion_inhibition", "ogtt", "loss_max")
 insi_civ = L("insulin_secretion", "civii", "u_opt")
 insi_civ_L1 = L("insulin_secretion", "civii", "loss_max")
 insi_civ_Lo = L("insulin_secretion", "civii", "loss_opt")
@@ -203,7 +206,10 @@ impairment) and glucagon secretion (potentiation and suppression).
 Five challenge protocols were simulated: prolonged fasting (600-min basal
 hold), IVGTT (0.5 g/kg over 3 min), OGTT (100 g oral), IVITT (0.04 U/kg
 insulin over 3 min) and continuous IV insulin infusion (CIVII, 0.25 mU/kg/min
-for 150 min). Fifteen endpoints were computed per run on the post-challenge
+for 150 min). Solver outputs were interpolated onto a common 0.5-min grid
+before endpoint computation so that sample-based statistics (SD, successive
+differences) do not depend on LSODA's internal step sizes. Fifteen endpoints
+were computed per run on the post-challenge
 window: hypo-/hyperglycaemic burdens (thresholds 70 and 140 mg/dL),
 |G − 90| deviation, glucose AUC, SD and successive-difference RMSD, peak,
 nadir, recovery time, undershoot, and insulin/glucagon exposure. The
@@ -242,10 +248,11 @@ intervention–challenge combinations. Three regimes dominate. In the
 fasting state every intervention leaves L essentially unchanged until
 ablation destabilises homeostasis (Type 0/III). Under IVGTT and IVITT the
 insulin axis is strongly non-monotone; under the more physiological OGTT,
-several glucagon-axis interventions have shallow interior optima.
+suppression of glucagon secretion shows a shallow interior optimum
+while most glucagon-axis interventions are near-plateau.
 
 **Strict interior optima (Type II) were found in {n_II} of {n_cases}
-combinations**, with a further {n_IIs} Type II* partial optima (Table 2).
+combinations** (Table 2).
 The strongest result is partial suppression of insulin secretion under
 IVGTT: u* = {F(isi)}, with L falling from {F(isi_L0)} at baseline to
 {F(isi_Lo)}, while full ablation (u = 1) gives {F(isi_L1)} — worse than
@@ -267,10 +274,10 @@ the nadir rises to {F(m_opt_nad,0)} mg/dL, and peak glucose increases only
 modestly (Figure 5). At u = 1,
 secretion is abolished, hypoglycaemia disappears but glucose never
 returns to target — the optimum interior point balances both failure
-modes. Under OGTT the glucagon-axis optima (u* = {F(gsi_ogtt)} for
-signalling inhibition, {F(gs_ogtt)} for secretion potentiation) are
-shallower and driven mainly by reduced glycaemic variability, consistent
-with the islet's paradoxical feedback design [3].
+modes. Under OGTT, partial glucagon secretion suppression shows a
+shallow interior optimum (u* = {F(gci_ogtt)}; L = {F(gci_Lo)} vs
+{F(gci_L1)} at u = 1), driven mainly by reduced glycaemic variability,
+consistent with the islet's paradoxical feedback design [3].
 
 ## Robustness and controls
 

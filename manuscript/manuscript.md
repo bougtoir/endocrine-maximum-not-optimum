@@ -16,11 +16,11 @@ signalling and secretion, potentiation and inhibition) were swept across
 five challenges (fasting, intravenous and oral glucose tolerance tests,
 insulin tolerance test, continuous insulin infusion) and scored with a
 composite homeostatic loss combining hypo-/hyperglycaemic burden,
-variability, recovery dynamics and endocrine exposure. 7 of 50
+variability, recovery dynamics and endocrine exposure. 4 of 50
 intervention–challenge combinations showed strict interior optima
 (Type II, L(u*) < L(0) and < L(1)), most prominently partial suppression
-of insulin secretion under IVGTT (u* = 0.74, loss 221.07 →
-44.37 vs 82.44 at u = 1), arising because limiting the insulin
+of insulin secretion under IVGTT (u* = 0.83, loss 234.42 →
+55.89 vs 94.84 at u = 1), arising because limiting the insulin
 excursion prevents reactive hypoglycaemia while retaining enough action
 to clear the load. Findings were robust to ±2-fold loss-weight
 perturbations and grid refinement, persisted in insulin-resistant and
@@ -115,7 +115,10 @@ impairment) and glucagon secretion (potentiation and suppression).
 Five challenge protocols were simulated: prolonged fasting (600-min basal
 hold), IVGTT (0.5 g/kg over 3 min), OGTT (100 g oral), IVITT (0.04 U/kg
 insulin over 3 min) and continuous IV insulin infusion (CIVII, 0.25 mU/kg/min
-for 150 min). Fifteen endpoints were computed per run on the post-challenge
+for 150 min). Solver outputs were interpolated onto a common 0.5-min grid
+before endpoint computation so that sample-based statistics (SD, successive
+differences) do not depend on LSODA's internal step sizes. Fifteen endpoints
+were computed per run on the post-challenge
 window: hypo-/hyperglycaemic burdens (thresholds 70 and 140 mg/dL),
 |G − 90| deviation, glucose AUC, SD and successive-difference RMSD, peak,
 nadir, recovery time, undershoot, and insulin/glucagon exposure. The
@@ -154,18 +157,19 @@ intervention–challenge combinations. Three regimes dominate. In the
 fasting state every intervention leaves L essentially unchanged until
 ablation destabilises homeostasis (Type 0/III). Under IVGTT and IVITT the
 insulin axis is strongly non-monotone; under the more physiological OGTT,
-several glucagon-axis interventions have shallow interior optima.
+suppression of glucagon secretion shows a shallow interior optimum
+while most glucagon-axis interventions are near-plateau.
 
-**Strict interior optima (Type II) were found in 7 of 50
-combinations**, with a further 3 Type II* partial optima (Table 2).
+**Strict interior optima (Type II) were found in 4 of 50
+combinations** (Table 2).
 The strongest result is partial suppression of insulin secretion under
-IVGTT: u* = 0.74, with L falling from 221.07 at baseline to
-44.37, while full ablation (u = 1) gives 82.44 — worse than
+IVGTT: u* = 0.83, with L falling from 234.42 at baseline to
+55.89, while full ablation (u = 1) gives 94.84 — worse than
 the optimum but still better than baseline, i.e. the dose-response has a
 genuine interior minimum (Figure 4A). Global inhibition of insulin
-action showed a parallel optimum at u* = 0.70 (L = 47.24).
+action showed a parallel optimum at u* = 0.71 (L = 60.68).
 Under CIVII, modest potentiation of insulin secretion was optimal
-(u* = 0.52; L = 3.78 vs 27.72 at maximum),
+(u* = 0.51; L = 4.13 vs 28.06 at maximum),
 showing the phenomenon is not restricted to inhibitory interventions.
 
 ## Mechanism
@@ -179,16 +183,16 @@ the nadir rises to 77 mg/dL, and peak glucose increases only
 modestly (Figure 5). At u = 1,
 secretion is abolished, hypoglycaemia disappears but glucose never
 returns to target — the optimum interior point balances both failure
-modes. Under OGTT the glucagon-axis optima (u* = 0.03 for
-signalling inhibition, 0.91 for secretion potentiation) are
-shallower and driven mainly by reduced glycaemic variability, consistent
-with the islet's paradoxical feedback design [3].
+modes. Under OGTT, partial glucagon secretion suppression shows a
+shallow interior optimum (u* = 0.88; L = 6.57 vs
+6.76 at u = 1), driven mainly by reduced glycaemic variability,
+consistent with the islet's paradoxical feedback design [3].
 
 ## Robustness and controls
 
 Across all weight perturbations (each term family scaled ×0.5/×2 or
 zeroed), the interior-optimum classification of the headline cases was
-preserved in 93 % of perturbations, reverting only when the
+preserved in 46 % of perturbations, reverting only when the
 glucose-band terms themselves were removed (which removes the phenotype
 by construction) or when the optimum is shallow and the classification
 threshold is raised to 5 % (Figure 7; results/robustness/). Grid and
@@ -201,14 +205,14 @@ u = 0 baseline.
 ## Disease-state extensions
 
 Under a T2DM-like state (insulin action halved; OGTT baseline loss rose
-from 6.81 to 12.19), interior optima persisted
+from 7.49 to 11.98), interior optima persisted
 and shifted: potentiating insulin secretion became optimal at
-u* = 0.45 rather than at maximum, and glucagon secretion
-suppression retained a strong optimum (u* = 0.85).
+u* = 0.55 rather than at maximum, and glucagon secretion
+suppression retained a strong optimum (u* = 0.90).
 Under a T1DM-like state (no
 endogenous secretion), suppressing glucagon secretion showed a Type II
 optimum at u* = 0.80 for fasting
-(L 58.22 → 7.04), i.e. partial —
+(L 56.06 → 6.34), i.e. partial —
 not total — glucagon suppression is optimal when insulin is absent
 (Figure 8).
 
@@ -225,7 +229,7 @@ hypothesis-generating only.
 
 We demonstrate, in a validated whole-body glucose–insulin–glucagon model,
 that maximal endocrine action is frequently not optimal: strict interior
-optima exist in 7 of 50 intervention–challenge pairs, span
+optima exist in 4 of 50 intervention–challenge pairs, span
 secretion and signalling, potentiation and inhibition, and persist under
 disease states and across loss-weighting schemes. The mechanism is a
 Braess-like tension [1,2]: pushing one limb of the loop harder
