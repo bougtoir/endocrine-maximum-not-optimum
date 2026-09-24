@@ -54,3 +54,16 @@ session (authors, journal, year, volume, DOI).
 - Python 3.10, numpy/scipy/pandas/matplotlib/openpyxl/python-docx
   (see requirements.txt).
 - Reproduce: `python scripts/run_all.py`.
+
+## Revision-1 additions
+- `analysis/make_evidence_table.py` added to the pipeline; Table 3
+  (Type II evidence) is regenerated from results CSVs, never hand-edited.
+- Pareto audit: dominance vs u=0/u=1 computed on the shared endpoint
+  frame; frontier membership on the (hypo, hyper, glucose-SD) objective
+  triple; findings: all Type II u* strictly dominate u=1; 2/4 lie on the
+  frontier; the OGTT optimum is endpoint-dependent (dominated).
+- Manuscript wording audit: no "frequently not optimal", "robust to",
+  or "22-compartment" strings remain; weight dependence (46% preserved)
+  stated in abstract and Discussion.
+- Reference [10] (Wang 2012) verified: DOI 10.1098/rsif.2012.0244,
+  PMID 22535698, vol 9(75):2723–2734 — added to verification CSV.

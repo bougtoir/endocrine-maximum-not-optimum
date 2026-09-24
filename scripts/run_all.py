@@ -22,6 +22,7 @@ STEPS = [
     ("HPT exploratory axis", [sys.executable, os.path.join(A, "run_hpt.py")]),
     ("figures", [sys.executable, os.path.join(A, "make_figures.py")]),
     ("tables + manuscript values", [sys.executable, os.path.join(A, "make_tables_values.py")]),
+    ("Type II evidence table", [sys.executable, os.path.join(A, "make_evidence_table.py")]),
     ("manuscript package", [sys.executable, os.path.join(A, "make_manuscript.py")]),
 ]
 

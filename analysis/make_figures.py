@@ -103,7 +103,7 @@ def fig3_loss_curves():
     fig.tight_layout(); fig.savefig(f"{FIG}/fig3_loss_curves.png"); plt.close(fig)
 
 
-def fig4_trajectories():
+def fig5_trajectories():
     """Glucose trajectories at u=0, u*, u=1 for the headline cases."""
     cases = [
         ("insulin_secretion_inhibition", "ivgtt", 0.83),
@@ -129,10 +129,10 @@ def fig4_trajectories():
         ax.set_title(f"{LABEL[ivn]} × {CH_LABEL[ch]}")
         ax.set_xlabel("Time (min)"); ax.set_ylabel("Glucose (mg/dL)")
     axes.flat[0].legend(frameon=False, fontsize=7)
-    fig.tight_layout(); fig.savefig(f"{FIG}/fig4_trajectories.png"); plt.close(fig)
+    fig.tight_layout(); fig.savefig(f"{FIG}/fig5_trajectories.png"); plt.close(fig)
 
 
-def fig5_mechanism():
+def fig6_mechanism():
     fn = f"{R}/feedback/insulin_secretion_inhibition__ivgtt.csv"
     df = pd.read_csv(fn)
     fig, ax = plt.subplots(1, 3, figsize=(7.2, 2.4))
@@ -145,10 +145,10 @@ def fig5_mechanism():
     ax[2].set_ylabel("Γ_HGP (mmol/min)")
     for a in ax: a.set_xlabel("Time (min)")
     ax[2].legend(frameon=False, fontsize=7)
-    fig.tight_layout(); fig.savefig(f"{FIG}/fig5_mechanism.png"); plt.close(fig)
+    fig.tight_layout(); fig.savefig(f"{FIG}/fig6_mechanism.png"); plt.close(fig)
 
 
-def fig6_pareto():
+def fig4_pareto():
     pf = pd.read_csv(f"{R}/robustness/pareto_fronts.csv")
     sub = pf[pf["axes"] == "hypo_burden_mgdl_min|hyper_burden_mgdl_min"]
     fig, ax = plt.subplots(figsize=(4.2, 3.2))
@@ -161,8 +161,9 @@ def fig6_pareto():
                         r["hypo_burden_mgdl_min"]), fontsize=5)
     ax.set_xlabel("Hyperglycaemic burden (mg/dL·min)")
     ax.set_ylabel("Hypoglycaemic burden (mg/dL·min)")
+    ax.set_title("Pareto front (lower-left is better); labels give u")
     ax.legend(frameon=False, fontsize=6)
-    fig.tight_layout(); fig.savefig(f"{FIG}/fig6_pareto.png"); plt.close(fig)
+    fig.tight_layout(); fig.savefig(f"{FIG}/fig4_pareto.png"); plt.close(fig)
 
 
 def fig7_weights():
@@ -187,6 +188,7 @@ def fig7_weights():
         for j in range(len(perts)):
             ax.text(j, i, C[i, j].replace("Type", "T"), ha="center",
                     va="center", fontsize=5, color="w")
+    ax.set_title("Classification depends on loss composition (colour = u*)")
     fig.colorbar(im, label="u*")
     fig.tight_layout(); fig.savefig(f"{FIG}/fig7_weights.png"); plt.close(fig)
 
@@ -220,8 +222,8 @@ if __name__ == "__main__":
     fig1_validation(); print("fig1 ok")
     fig2_convention(); print("fig2 ok")
     fig3_loss_curves(); print("fig3 ok")
-    fig4_trajectories(); print("fig4 ok")
-    fig5_mechanism(); print("fig5 ok")
-    fig6_pareto(); print("fig6 ok")
+    fig5_trajectories(); print("fig5 ok")
+    fig6_mechanism(); print("fig6 ok")
+    fig4_pareto(); print("fig4 ok")
     fig7_weights(); print("fig7 ok")
     fig8_disease(); print("fig8 ok")

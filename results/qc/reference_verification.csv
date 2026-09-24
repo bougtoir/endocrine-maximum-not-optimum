@@ -8,3 +8,4 @@ n,citation,verification,source
 7,"Bergman RN, Ider YZ, Bowden CR, Cobelli C. Quantitative estimation of insulin sensitivity. Am J Physiol 1979;236:E667-E677","canonical minimal-model paper; verified bibliographic details","crossref/manual"
 8,"Onishi T. yoshika: a Python package for pharmacokinetic-pharmacodynamic simulation of local anesthetics. Array 2026;31:101106","verified DOI 10.1016/j.array.2026.101106; author Tatsuki O; vol 31; 101106","crossref"
 9,"Onishi T. When medicine repays physics: a pharmacokinetic toolkit for chaotic three-body scattering. Chaos Solitons Fractals 2026;212:119159","verified DOI 10.1016/j.chaos.2026.119159; vol 212; 119159","crossref"
+10,"Wang G. Optimal homeostasis necessitates bistable control. J R Soc Interface 2012;9:2723-2734","verified DOI 10.1098/rsif.2012.0244; author Guanyu Wang; 2012; vol 9(75) pp. 2723-34; PMID 22535698","pubmed/royalsocietypublishing"
