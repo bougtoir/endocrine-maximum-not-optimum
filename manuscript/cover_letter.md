@@ -1,17 +1,18 @@
 Dear Editors,
 
-We submit the manuscript "Maximum hormonal action is not optimal:
-interior optima of endocrine feedback efficacy in a validated
+We submit the manuscript "Maximum hormonal action is not always optimal:
+interior optima of endocrine feedback efficacy in a previously validated
 glucose–insulin–glucagon model" for consideration in the Journal of
 Endocrinology.
 
-Homeostatic feedback loops are presumed to work best at maximal
-responsiveness. Using a validated whole-body glucose–insulin–glucagon
-model, we show this is not true: several interventions have strict
-interior optima (moderate modulation beats both baseline and maximum),
-arising from a Braess-like trade-off between opposing failure modes. The
-finding is robust to loss-weighting, grid and solver checks, persists in
-insulin-resistant and insulin-deficient states, and is corroborated in a
+Using a previously validated whole-body glucose–insulin–glucagon model
+(the Python port reproduced key upstream validation outputs), we show a
+subset of interventions exhibits strict interior optima — moderate
+modulation beats both baseline and maximum — arising from a Braess-like
+tension between opposing failure modes. The optima are stable to grid
+and solver checks, show explicit dependence on loss-function
+composition (reported with denominators), persist in insulin-resistant
+and insulin-deficient states, and receive exploratory corroboration in a
 minimal HPT-axis model.
 
 The study is fully reproducible: the complete pipeline, frozen upstream

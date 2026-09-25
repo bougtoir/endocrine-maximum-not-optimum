@@ -1,7 +1,7 @@
 ---
-title: "Maximum hormonal action is not optimal: interior optima of endocrine feedback efficacy in a previously validated glucose–insulin–glucagon model"
+title: "Maximum hormonal action is not always optimal: interior optima of endocrine feedback efficacy in a previously validated glucose–insulin–glucagon model"
 short_title: "Maximum is not optimum"
-word_count: 221
+word_count: 243
 ---
 
 # Abstract
@@ -19,12 +19,14 @@ interior optima (Type II, L(u*) < L(0) and < L(1)). The clearest case is
 partial suppression of insulin secretion under IVGTT (u* = 0.83;
 loss 234.42 → 55.89 vs 94.84 at u = 1): limiting the
 insulin excursion prevents reactive hypoglycaemia while retaining enough
-action to clear the load. For all four cases u* strictly improves on u = 1 on the glycaemic axes,
-and 2 of 4 lie on the Pareto frontier of glycaemic
-burden and variability; the optima
+action to clear the load. All four optima were no worse than maximal modulation (u = 1) on the
+glycaemic-burden axes, and 2 of 4 lay on the Pareto
+frontier of glycaemic burden and variability; the optima
 were stable to grid and solver refinement, while classification showed
-the expected dependence on loss-function composition (46 % of
-weight perturbations preserved Type II/II*). Parallel optima appeared in
+the expected dependence on loss-function composition (per-case, 92 % —
+11/12 — of weight perturbations preserved Type II/II* for each probed
+Type II case; pooled across all six probed cases the fraction was
+46 %). Parallel optima appeared in
 insulin-resistant and insulin-deficient states and, exploratorily, in a
 minimal HPT-axis model. Maximal endocrine action can therefore be
 suboptimal in feedback-controlled systems — a Braess-like regime.
@@ -150,7 +152,7 @@ classification-stable (results/controls/). Robustness was assessed by
 were extracted per case. Disease extensions rescanned all interventions
 under a T2DM-like state (insulin signalling efficacy halved) and a
 T1DM-like state (endogenous insulin secretion abolished; glucagon
-secretion intact). An exploratory
+secretion remains simulated/manipulable). An exploratory
 3-ODE HPT-axis model (TSH secretion with Hill feedback by T3, T4 and T3
 pools) tested generality. All analyses regenerate via
 `python scripts/run_all.py`; 16 unit tests cover model integrity, the
@@ -191,10 +193,11 @@ continuous-infusion challenges (Table 2, Table 3).
 
 Because the composite loss is one scalarisation of homeostatic
 performance, each Type II case was also assessed on the glycaemic axes
-without weights (Figure 4, Table 3). For all four cases u* strictly
-improves on maximal modulation u = 1 — equal or lower hypoglycaemic and
-hyperglycaemic burden — and 2 of 4 optima lie on the
-Pareto frontier (no other u is better on every glycaemic axis). Versus
+without weights (Figure 4, Table 3). All four optima are no worse than
+maximal modulation u = 1 on the glycaemic-burden axes — three strictly
+dominate u = 1 there, the OGTT case is a trade-off — and 2 of
+4 optima lie on the Pareto frontier (no other u is better on every
+glycaemic axis). Versus
 baseline, the IVGTT optimum is a genuine trade-off rather than universal
 dominance: the reactive-hypoglycaemia burden falls from 1760.30
 to 0.00 mg/dL·min while hyperglycaemic burden rises
@@ -238,8 +241,11 @@ whether interior optima remain detectable under multiple reasonable
 definitions of homeostatic performance. Grid and solver checks confirmed
 classification stability — refined optima differed from coarse-grid
 estimates by ≤ 0.05 and tolerances rtol 1e-5/1e-7 did not change labels.
-Weight dependence was explicit: the interior-optimum classification of
-the headline cases was preserved in 46 % of perturbations,
+Weight dependence was explicit. For each Type II case probed, 11 of
+12 weight perturbations (92 %) preserved Type II/II* classification;
+pooled across all 6 probed cases the fraction was
+46 % (72 perturbations: four loss-term families
+× ×0.5/×2/=0 per case).
 reverting when the glucose-band terms themselves were removed (removing
 the phenotype by construction) or when the optimum is shallow and the
 classification threshold is raised to 5 % (Figure 7). Cases whose
@@ -306,8 +312,8 @@ single reference subject; the IVGTT reactive hypoglycaemia it produces
 so the absolute position of u* for IVGTT is model-dependent even though
 the existence of an interior optimum is not. The composite loss encodes
 a particular set of homeostatic priorities (hypoglycaemia weighted
-heaviest): classification is accordingly weight-dependent (46 %
-of perturbations preserved Type II/II*), the OGTT optimum is
+heaviest): classification is accordingly weight-dependent (pooled 46 %
+preserved Type II/II*; per-case 92 % for the probed Type II cases), the OGTT optimum is
 endpoint-dependent rather than Pareto-supported, and we report both
 honestly via the weight-independent analysis. The HPT extension is
 exploratory and unfitted. We claim no clinical dose inference, no

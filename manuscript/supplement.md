@@ -27,7 +27,7 @@ cross-axis hypothesis-generating corroboration only.
 
 ## S5. Disease-state details
 `results/disease/disease_classification.csv`: T2DM-like (insulin
-signalling × 0.5) and T1DM-like (endogenous insulin secretion abolished) scans for all
+signalling × 0.5) and T1DM-like (endogenous insulin secretion abolished; glucagon secretion remains simulated/manipulable) scans for all
 interventions × {"fasting", "ogtt"}.
 
 ## S6. Numerical integrity
