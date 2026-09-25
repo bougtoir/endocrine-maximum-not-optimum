@@ -1,0 +1,11 @@
+n,citation,verification,source
+1,"Braess D. Über ein Paradoxon aus der Verkehrsplanung. Unternehmensforschung 1968;12:258-268","classic primary source; canonical reference for Braess' paradox","crossref/manual"
+2,"Donovan GM. Biological version of Braess' paradox arising from perturbed homeostasis. Phys Rev E 2018;98:062406","verified DOI 10.1103/PhysRevE.98.062406; author Donovan G; 2018; vol 98","crossref"
+3,"Garzilli I, Itzkovitz S. Design principles of the paradoxical feedback between pancreatic alpha and beta cells. Sci Rep 2018;8:11334","verified DOI 10.1038/s41598-018-29084-4; authors Garzilli I, Itzkovitz S; 2018; vol 8","crossref"
+4,"Calabrese EJ, Baldwin LA. Hormesis: U-shaped dose responses and their centrality in toxicology. Trends Pharmacol Sci 2001;22:285-291","standard hormesis review; verified bibliographic details","crossref/manual"
+5,"Panunzi S, Pompa M, Borri A, Piemonte V, De Gaetano A. A revised Sorensen model... PLoS ONE 2020;15:e0237215","verified DOI 10.1371/journal.pone.0237215; all five authors; 2020; e0237215","crossref"
+6,"Sorensen JT. A physiologic model of glucose metabolism in man... PhD thesis, MIT, 1985","thesis on which the model is based; frozen copy models/primary/upstream/Sorensen_phd.pdf","upstream repo"
+7,"Bergman RN, Ider YZ, Bowden CR, Cobelli C. Quantitative estimation of insulin sensitivity. Am J Physiol 1979;236:E667-E677","canonical minimal-model paper; verified bibliographic details","crossref/manual"
+8,"Onishi T. yoshika: a Python package for pharmacokinetic-pharmacodynamic simulation of local anesthetics. Array 2026;31:101106","verified DOI 10.1016/j.array.2026.101106; author Tatsuki O; vol 31; 101106","crossref"
+9,"Onishi T. When medicine repays physics: a pharmacokinetic toolkit for chaotic three-body scattering. Chaos Solitons Fractals 2026;212:119159","verified DOI 10.1016/j.chaos.2026.119159; vol 212; 119159","crossref"
+10,"Wang G. Optimal homeostasis necessitates bistable control. J R Soc Interface 2012;9:2723-2734","verified DOI 10.1098/rsif.2012.0244; author Guanyu Wang; 2012; vol 9(75) pp. 2723-34; PMID 22535698","pubmed/royalsocietypublishing"

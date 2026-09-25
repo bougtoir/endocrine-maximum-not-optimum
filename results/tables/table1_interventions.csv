@@ -1,0 +1,11 @@
+intervention,label,mode,mod_key,f_u_max,description
+insulin_signal_global,Insulin signalling (global),potentiation,insulin_pgu+insulin_hgp+insulin_hgu,3.0,Scales insulin action at all sites simultaneously.
+glucagon_signal_hepatic,Glucagon signalling (hepatic HGP),potentiation,glucagon_hgp,3.0,Scales the glucagon signal driving hepatic glucose production.
+insulin_secretion,Beta-cell insulin secretion capacity,potentiation,insulin_secretion,3.0,Scales pancreatic insulin release rate.
+glucagon_secretion,Alpha-cell glucagon secretion capacity,potentiation,glucagon_secretion,3.0,Scales pancreatic glucagon release rate.
+insulin_signal_global_inhibition,Insulin signalling inhibition,inhibition,insulin_pgu+insulin_hgp+insulin_hgu,0.0,Scales insulin action downward; u=1 is complete insulin resistance.
+glucagon_signal_inhibition,Glucagon signalling inhibition,inhibition,glucagon_hgp,0.0,u=1 abolishes glucagon stimulation of HGP.
+insulin_secretion_inhibition,Beta-cell secretion impairment,inhibition,insulin_secretion,0.0,u=1 abolishes endogenous insulin secretion (T1DM limit).
+glucagon_secretion_inhibition,Glucagon secretion suppression,inhibition,glucagon_secretion,0.0,u=1 abolishes endogenous glucagon secretion.
+insulin_signal_peripheral,Insulin signalling (peripheral uptake),potentiation,insulin_pgu,3.0,Scales the insulin signal driving peripheral glucose uptake (MIPGU).
+insulin_signal_hepatic,Insulin signalling (hepatic: HGP + HGU),potentiation,insulin_hgp+insulin_hgu,3.0,Scales insulin action on hepatic glucose production and uptake.

@@ -1,0 +1,5 @@
+intervention,challenge,u_star,loss_u0,loss_ustar,loss_u1,hypo_u0,hypo_ustar,hypo_u1,hyper_u0,hyper_ustar,hyper_u1,nadir_ustar,peak_ustar,insulin_auc_ustar,pareto_status,grid_stability,solver_stable,weight_sensitivity,disease_replication
+insulin_signal_global_inhibition,ivgtt,0.71,234.42,60.68,66.84,1760.3,0.0,0.0,2155.8,3793.6,7019.0,70.1,413.4,32349.0,dominates u=1; on frontier,TypeII (u* 0.70-0.70),yes,92% keep TypeII/II*,-
+insulin_secretion_inhibition,ivgtt,0.83,234.42,55.89,94.84,1760.3,0.0,0.0,2155.8,2809.7,20966.9,82.9,427.5,5876.0,dominates u=1; dominated (endpoint-dependent),TypeII (u* 0.80-0.85),yes,92% keep TypeII/II*,-
+glucagon_secretion_inhibition,ogtt,0.88,7.49,6.57,6.76,0.0,0.0,0.0,0.0,0.0,0.0,77.7,130.7,14004.0,trade-off vs endpoints; dominated (endpoint-dependent),n/a,n/a,92% keep TypeII/II*,-
+insulin_secretion,civii,0.51,5.07,4.13,28.06,0.0,0.0,241.0,0.0,0.0,0.0,70.0,85.6,6423.0,dominates u=1; on frontier,n/a,n/a,not covered,-
