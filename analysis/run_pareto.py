@@ -12,6 +12,8 @@ CASES = [
     ("insulin_signal_global_inhibition", "ivgtt"),
     ("glucagon_secretion", "ogtt"),
     ("glucagon_signal_inhibition", "ogtt"),
+    ("glucagon_secretion_inhibition", "ogtt"),
+    ("insulin_secretion", "civii"),
     ("insulin_secretion_inhibition", "ogtt"),
     ("insulin_signal_global", "ogtt"),
 ]

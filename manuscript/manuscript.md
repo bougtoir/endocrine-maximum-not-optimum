@@ -195,7 +195,7 @@ Because the composite loss is one scalarisation of homeostatic
 performance, each Type II case was also assessed on the glycaemic axes
 without weights (Figure 4, Table 3). All four optima are no worse than
 maximal modulation u = 1 on the glycaemic-burden axes — three strictly
-dominate u = 1 there, the OGTT case is a trade-off — and 2 of
+dominate u = 1 there, the OGTT case shows equal glycaemic burdens — and 2 of
 4 optima lie on the Pareto frontier (no other u is better on every
 glycaemic axis). Versus
 baseline, the IVGTT optimum is a genuine trade-off rather than universal
@@ -203,9 +203,10 @@ dominance: the reactive-hypoglycaemia burden falls from 1760.30
 to 0.00 mg/dL·min while hyperglycaemic burden rises
 modestly (2155.80 → 2809.70). The shallow OGTT
 glucagon-suppression optimum is endpoint-dependent: on the glycaemic
-axes it is not Pareto-undominated — its interior minimum reflects a
-trade-off between endocrine exposure and glycaemic variability rather
-than a glycaemic improvement per se. Individual endpoints for each case
+axes it is not Pareto-undominated — its interior minimum reflects reduced
+glycaemic variability and endocrine exposure rather than a difference
+in glycaemic burden (hypo and hyper burden are zero at u = 0, u* and
+u = 1). Individual endpoints for each case
 are given in Table 3.
 
 ## Mechanism of the IVGTT optimum
