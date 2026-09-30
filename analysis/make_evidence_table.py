@@ -56,7 +56,10 @@ for _, r in II.iterrows():
     parts = []
     if dom0: parts.append("dominates u=0")
     if dom1: parts.append("dominates u=1")
-    if not parts: parts.append("trade-off vs endpoints")
+    if not parts:
+        parts.append("equal on glycaemic axes" if
+                     (hs == h0 == h1 and ps == p0 == p1)
+                     else "trade-off vs endpoints")
     pareto = "; ".join(parts) + ("; dominated (endpoint-dependent)" if dominated
                                  else "; on frontier")
     g = gd[(gd.intervention == ivn) & (gd.challenge == ch)]
