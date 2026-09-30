@@ -1,0 +1,8 @@
+case,response_class,u_opt,span
+monotonic_worsening,Type0,0.0,10.0
+monotonic_improving,TypeI,1.0,3.8
+flat,TypeIII,0.0,0.0
+planted_U,TypeII,0.45,3.630000000000001
+planted_U_edge0,Type0,0.05,10.83
+inverted_U_loss,TypeI,1.0,3.5999999999999996
+noisy_flat,TypeIII,0.30000000000000004,0.019920788893188934
