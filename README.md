@@ -3,8 +3,6 @@
 **Maximum hormonal action is not always optimal: interior optima in a
 previously validated glucose–insulin–glucagon model.**
 
-Paper 2 of the series. Companion to a Journal of Endocrinology submission.
-
 ## Reproduce everything
 
 ```
