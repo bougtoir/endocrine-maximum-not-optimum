@@ -99,7 +99,7 @@ a second axis, the hypothalamic–pituitary–thyroid (HPT) loop.
 
 ## Model
 
-The primary system is the revised Sorensen model of Panunzi et al. [5]
+The primary system is the revised Sorensen model of Panunzi et al. [9]
 (CC-BY), a previously validated model ported from the upstream reference
 implementation (MATLAB; iasi-cnr/A-Revised-Sorensen-Model, commit
 1ad94954) to Python 3. The model

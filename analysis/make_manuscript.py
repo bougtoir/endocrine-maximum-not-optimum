@@ -225,7 +225,7 @@ a second axis, the hypothalamic–pituitary–thyroid (HPT) loop.
 
 ## Model
 
-The primary system is the revised Sorensen model of Panunzi et al. [5]
+The primary system is the revised Sorensen model of Panunzi et al. {{panunzi}}
 (CC-BY), a previously validated model ported from the upstream reference
 implementation (MATLAB; iasi-cnr/A-Revised-Sorensen-Model, commit
 1ad94954) to Python 3. The model
@@ -370,7 +370,7 @@ returns to target — the optimum interior point balances both failure
 modes. Under OGTT, partial glucagon secretion suppression shows a
 shallow interior optimum (u* = {F(gci_ogtt)}; L = {F(gci_Lo)} vs
 {F(gci_L1)} at u = 1), driven mainly by reduced glycaemic variability,
-consistent with the islet's paradoxical feedback design [3].
+consistent with the islet's paradoxical feedback design {{garzilli}}.
 
 ## Additional non-IVGTT interior optima
 
