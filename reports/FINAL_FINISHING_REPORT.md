@@ -78,3 +78,24 @@ framing changes. Pipeline rerun in full; all outputs regenerated.
 ## Deliverable
 
 - `submission/FINAL_JOE_SUBMISSION.zip`
+
+---
+
+## Revision pass 2 (2026-10-01, affiliation-excepted prompt)
+
+- **Figure renumbering performed:** former Fig 4 (Pareto) → Fig 5; former
+  Fig 5 (trajectories) → Fig 4. Filenames renamed (fig4_trajectories.png,
+  fig5_pareto.png); in-text citations and captions updated; first-citation
+  order now strictly 1–8 (see FINAL_FIGURE_TABLE_ORDER_AUDIT.md).
+- **Table-order audit:** 1→2→3, no orphans/reverse citations. OK.
+- **Robustness grammar correction:** malformed "four loss-term families
+  × ×0.5/×2/=0 per case). reverting when…" rewritten with explicit
+  denominators (11/12 per-case; 33/72 pooled; ×0.5/×2/0 composition).
+- **Cover letter rewritten** from scratch — scientific-first framing,
+  stand-alone (no "Paper 2"/"methodological series").
+- Final abstract word count: 243. Figures: 8. Tables: 3.
+- Unit tests: 16/16 pass (full run_all.py rerun).
+- Journal compliance: OK (checklist unchanged; new title already within
+  limits).
+- **Affiliation was NOT changed** — placeholder left as-is.
+- Final ZIP: submission/FINAL_JOE_SUBMISSION_REVISED.zip
