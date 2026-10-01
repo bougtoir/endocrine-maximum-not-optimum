@@ -100,6 +100,29 @@ frac_II_case = 100 * _pc_II.min()  # minimum per-case retention
 n_w_cases = len(_pc)               # probed cases total
 n_w_pert = len(rob_keep)           # total perturbations pooled
 
+REFS = {
+    "cannon": "Cannon WB. Organization for physiological homeostasis. Physiol Rev 1929;9:399–431.",
+    "kitano": "Kitano H. Biological robustness. Nat Rev Genet 2004;5:826–837.",
+    "garzilli": "Garzilli I, Itzkovitz S. Design principles of the paradoxical feedback between pancreatic alpha and beta cells. Sci Rep 2018;8:11334.",
+    "kawamori": "Kawamori D, Kurpad AJ, Hu J, et al. Insulin signaling in α cells modulates glucagon secretion in vivo. Cell Metab 2009;9:350–361.",
+    "capozzi": "Capozzi ME, Svendsen B, Encisco SE, et al. β Cell tone is defined by proglucagon peptides through cAMP signaling. JCI Insight 2019;4:e126742.",
+    "bergman79": "Bergman RN, Ider YZ, Bowden CR, Cobelli C. Quantitative estimation of insulin sensitivity. Am J Physiol 1979;236:E667–E677.",
+    "bergman21": "Bergman RN. Origins and history of the minimal model of glucose regulation. Front Endocrinol (Lausanne) 2021;11:583016.",
+    "sorensen": "Sorensen JT. A physiologic model of glucose metabolism in man and its use to design and assess improved insulin therapies for diabetes. PhD thesis, MIT, 1985.",
+    "panunzi": "Panunzi S, Pompa M, Borri A, Piemonte V, De Gaetano A. A revised Sorensen model: simulating glycemic and insulinemic response to oral and intravenous glucose loads. PLoS ONE 2020;15:e0237215.",
+    "dallaman": "Dalla Man C, Micheletto F, Lv D, Breton M, Kovatchev B, Cobelli C. The UVA/PADOVA type 1 diabetes simulator: new features. J Diabetes Sci Technol 2014;8:26–34.",
+    "calabrese": "Calabrese EJ, Baldwin LA. Hormesis: U-shaped dose responses and their centrality in toxicology. Trends Pharmacol Sci 2001;22:285–291.",
+    "vandenberg": "Vandenberg LN, Colborn T, Hayes TB, et al. Hormones and endocrine-disrupting chemicals: low-dose effects and nonmonotonic dose responses. Endocr Rev 2012;33:378–455.",
+    "braess": "Braess D. Über ein Paradoxon aus der Verkehrsplanung. Unternehmensforschung 1968;12:258–268.",
+    "donovan": "Donovan GM. Biological version of Braess' paradox arising from perturbed homeostasis. Phys Rev E 2018;98:062406.",
+    "schwartz": "Schwartz NS, Clutter WE, Shah SD, Cryer PE. Glycemic thresholds for activation of glucose counterregulatory systems are higher than the threshold for symptoms. J Clin Invest 1987;79:777–781.",
+    "thomaseth": "Thomaseth K, Brehm A, Pavan A, Pacini G, Roden M. Modeling glucose and free fatty acid kinetics during insulin-modified intravenous glucose tolerance test in healthy humans: role of counterregulatory response. Am J Physiol Regul Integr Comp Physiol 2014;307:R321–R331.",
+    "pandiyan": "Pandiyan B, Merrill SJ, Benvenga S. A patient-specific model of the negative-feedback control of the hypothalamus–pituitary–thyroid (HPT) axis in autoimmune (Hashimoto's) thyroiditis. Math Med Biol 2014;31:226–258.",
+    "wang": "Wang G. Optimal homeostasis necessitates bistable control. J R Soc Interface 2012;9:2723–2734.",
+}
+
+
+
 # -------------------------------------------------------------------------
 MD = f"""---
 title: "Maximum hormonal action is not always optimal: interior optima in a previously validated glucose–insulin–glucagon model"
@@ -141,39 +164,62 @@ feedback; Braess paradox; homeostatic regulation
 
 # Introduction
 
-Endocrine interventions are commonly described in terms of increased or
-decreased hormonal efficacy, whereas the relationship between the
-magnitude of a local endocrine action and whole-system homeostatic
-performance is less often examined explicitly. Yet the glucose
-regulatory system is nonlinear and counter-regulated: insulin suppresses
-hepatic output and drives peripheral uptake while glucagon acts
-oppositely, and the islet α/β circuit is itself "paradoxical" — insulin
-suppresses glucagon secretion while glucagon stimulates insulin
-secretion, a design shown to damp glucose overshoot [3]. In such coupled
-loops, network theory warns that maximal local capacity need not be
-globally optimal — most famously in Braess' paradox, where adding
-capacity to a traffic network degrades overall flow [1], and in its
-biological analogue where perturbation of a homeostatic network can
-produce paradoxical behaviour [2].
+Endocrine physiology is organised as a control problem: hormones act
+inside feedback loops, so the efficacy of a local signal — how strongly
+it acts on its target — and its whole-system utility — how well the
+closed loop holds homeostasis — are distinct quantities {{cannon}}.
+Stronger local action can recruit counter-regulation, so pushing a loop
+harder does not necessarily improve its performance {{kitano}}. The
+pancreatic islet is a compact example: insulin suppresses glucagon
+secretion while glucagon stimulates insulin secretion, a reciprocal or
+"paradoxical" arrangement that shapes both glucose clearance and the
+risk of overshoot {{garzilli,kawamori,capozzi}}.
 
-Whether maximum endocrine *action* is optimal at the whole-organism level
-has not, to our knowledge, been tested in a quantitative model.
-Dose-response non-monotonicity is well documented pharmacologically
-(hormesis/U-shaped curves) [4], but those observations concern exogenous
-agonism of isolated targets, not the efficacy of an intact multi-loop
-feedback system under physiological challenge. Here, we test this
-hypothesis directly at the level of endocrine feedback: **there exist
-interventions whose effect on whole-body homeostatic performance has an
-interior optimum u* in (0,1), i.e. moderate modulation outperforms both
-the unperturbed baseline and the maximal modulation.**
+Quantitative modelling has long supplied the language for such
+questions. The minimal-model tradition established that a few state
+variables suffice to quantify insulin sensitivity from IV glucose
+tolerance tests {{bergman79,bergman21}}. Whole-body physiology entered
+from Sorensen's original model {{sorensen}} into revised Sorensen-type
+systems that resolve pancreatic insulin secretion, hepatic glucose
+production/utilisation and peripheral uptake {{panunzi}}, and modern
+simulators explicitly include glucagon secretion and action in the
+hypoglycaemic range {{dallaman}}. These models make it possible to ask
+not only whether an intervention changes a hormone level but how it
+shifts the performance of the entire feedback system — including
+whether the relation between endocrine efficacy and homeostatic outcome
+has an interior optimum.
+
+Non-monotonic dose–response is well documented elsewhere: hormetic
+U-shaped curves are a pharmacological staple {{calabrese}}, and
+non-monotonicity is common for natural hormones and endocrine-active
+agents {{vandenberg}}. Those observations concern the response of a
+target to exogenous exposure. The question here is structurally
+different: the intervention variable is a monotonic, continuous scaling
+of endogenous feedback efficacy, and the non-monotonicity emerges at
+the level of whole-system homeostatic utility — monotonic local
+modulation → feedback-controlled endocrine system → non-monotonic
+system performance. Whether maximum endocrine action is optimal at the
+whole-organism level has not, to our knowledge, been tested in a
+quantitative model.
+
+In coupled networks, theory warns that maximal local capacity need not
+be globally optimal — most famously in Braess' paradox, where adding
+capacity to a traffic network degrades overall flow {{braess}}, and in
+its biological analogue where perturbation of a homeostatic network can
+produce paradoxical behaviour {{donovan}}. Here, we test the
+complementary hypothesis directly at the level of endocrine feedback:
+**there exist interventions whose effect on whole-body homeostatic
+performance has an interior optimum u* in (0,1), i.e. moderate
+modulation outperforms both the unperturbed baseline and the maximal
+modulation.**
 
 We formalise this in the revised Sorensen glucose–insulin–glucagon model
-[5] — a 26-state ODE system with explicit insulin and glucagon secretion,
-hepatic glucose production/utilisation and peripheral uptake — using a
-uniform modulation convention, a justified composite homeostatic loss,
-mandatory synthetic negative controls, and sensitivity analysis. We then
-ask whether the phenomenon generalises to a second axis, the
-hypothalamic–pituitary–thyroid (HPT) loop.
+{{panunzi}} — a 26-state ODE system with explicit insulin and glucagon
+secretion, hepatic glucose production/utilisation and peripheral uptake
+— using a uniform modulation convention, a justified composite
+homeostatic loss, mandatory synthetic negative controls, and
+sensitivity analysis. We then ask whether the phenomenon generalises to
+a second axis, the hypothalamic–pituitary–thyroid (HPT) loop.
 
 # Materials and Methods
 
@@ -393,13 +439,13 @@ while worsening the countervailing one through feedback. A larger
 insulin excursion clears glucose faster but drives deeper reactive
 hypoglycaemia; suppressing the loop harder over-commits the system,
 so an interior point balances the two — a Braess-like tension between
-local action and global performance [1,2]. The interior optimum is the
+local action and global performance {{braess,donovan}}. The interior optimum is the
 empirical result; the Braess-like regime is our interpretation.
 
 Why it matters: local efficacy and whole-system homeostatic utility can
 be non-monotonically related. This complements earlier optimality
 arguments that glucose control must trade rapid clearance against
-insulin sparing [10]: rather than optimality forcing a discrete
+insulin sparing {{wang}}: rather than optimality forcing a discrete
 (bistable) control regime, our results show it can also place the
 optimum at an intermediate modulation strength within a continuous
 efficacy convention. Maximum hormonal action is not always
@@ -408,17 +454,56 @@ optimum will respond to up-modulation with worsening in at least one
 direction, a testable prediction for other axes and for patient-level
 models.
 
+Why an interior optimum is physiologically plausible: glucose
+regulation defends two opposite failures, and the defences are
+recruited at different thresholds. Counter-regulatory hormone secretion
+(glucagon, epinephrine) activates near 68–69 mg/dL — well above the
+symptomatic threshold {{schwartz}} — so a stronger insulin excursion buys
+faster clearance at the price of driving glucose into the
+counter-regulatory zone, where the system's own corrective machinery
+generates overshoot and delayed recovery. The reciprocal islet design
+{{garzilli,kawamori,capozzi}} makes the trade explicit: modulating
+secretion on one side of the α/β loop reshapes the other, so response
+speed and overshoot cannot be optimised independently. The interior
+minimum is the point where the marginal benefit of faster clearance
+equals the marginal cost of deeper counter-regulation.
+
+This is not simply another hormetic dose–response. Classic hormesis and
+the non-monotonic dose responses catalogued for endocrine-active agents
+describe the response of a target to increasing exogenous exposure
+{{calabrese,vandenberg}}. Here the intervention variable is monotonic by
+construction — increasing u scales a single efficacy channel smoothly
+in one direction — and the U-shape emerges at system level because u
+shifts the balance between two failure modes through feedback. The
+locus of non-monotonicity is the closed loop, not the dose–response of
+any isolated target; a local-intervention monotonicity is converted,
+not postulated, into system non-monotonicity.
+
+Context dependence is part of the finding, not only a caveat. The
+position of u* shifted between challenges (IVGTT vs OGTT vs CIVII) and
+between the healthy, T2DM-like and T1DM-like parameterisations, and one
+optimum (OGTT) was endpoint-dependent even though it remained no worse
+than maximal action. This is what should be expected of a real
+feedback-driven optimum: the "best" modulation strength is an emergent
+property of where the system sits and which homeostatic failure mode is
+closest, consistent with optimality arguments that effective control
+depends on the operating point {{wang}}.
+
 Several limitations qualify the finding. The model is parameterised on a
 single reference subject; the IVGTT reactive hypoglycaemia it produces
-(nadir ≈ 40 mg/dL) is more severe than typical clinical FSIGT responses,
-so the absolute position of u* for IVGTT is model-dependent even though
-the existence of an interior optimum is not. The composite loss encodes
+(nadir ≈ 40 mg/dL) exceeds the transient, subject-dependent
+counter-regulatory dips described for insulin-modified FSIGT
+protocols {{thomaseth}}, so the absolute position of u* for IVGTT is
+model-dependent even though the existence of an interior optimum is
+not. The composite loss encodes
 a particular set of homeostatic priorities (hypoglycaemia weighted
 heaviest): classification is accordingly weight-dependent (pooled {F(frac_II,0)} %
 preserved Type II/II*; per-case 92 % for the probed Type II cases), the OGTT optimum is
 endpoint-dependent rather than Pareto-supported, and we report both
 honestly via the weight-independent analysis. The HPT extension is
-exploratory and unfitted. We claim no clinical dose inference, no
+exploratory and unfitted — richer HPT feedback models exist {{pandiyan}}
+and the stylised model here serves only to test whether the same
+interior-optimum pattern can arise on a second axis. We claim no clinical dose inference, no
 universal Braess behaviour, no general superiority of partial agonists
 or partial modulation — the results are mechanistic and
 hypothesis-generating.
@@ -441,34 +526,27 @@ competing interests.
 
 # References
 
-1. Braess D. Über ein Paradoxon aus der Verkehrsplanung.
-   Unternehmensforschung 1968;12:258–268.
-2. Donovan GM. Biological version of Braess' paradox arising from
-   perturbed homeostasis. Phys Rev E 2018;98:062406.
-3. Garzilli I, Itzkovitz S. Design principles of the paradoxical feedback
-   between pancreatic alpha and beta cells. Sci Rep 2018;8:11334.
-4. Calabrese EJ, Baldwin LA. Hormesis: U-shaped dose responses and their
-   centrality in toxicology. Trends Pharmacol Sci 2001;22:285–291.
-5. Panunzi S, Pompa M, Borri A, Piemonte V, De Gaetano A. A revised
-   Sorensen model: simulating glycemic and insulinemic response to oral
-   and intravenous glucose loads. PLoS ONE 2020;15:e0237215.
-6. Sorensen JT. A physiologic model of glucose metabolism in man and its
-   use to design and assess improved insulin therapies for diabetes.
-   PhD thesis, MIT, 1985.
-7. Bergman RN, Ider YZ, Bowden CR, Cobelli C. Quantitative estimation of
-   insulin sensitivity. Am J Physiol 1979;236:E667–E677.
-8. Onishi T. yoshika: a Python package for pharmacokinetic–pharmacodynamic
-   simulation of local anesthetics. Array 2026;31:101106.
-9. Onishi T. When medicine repays physics: a pharmacokinetic toolkit for
-   chaotic three-body scattering. Chaos Solitons Fractals 2026;212:119159.
-10. Wang G. Optimal homeostasis necessitates bistable control.
-    J R Soc Interface 2012;9:2723–2734.
 """
 
 # ---- write markdown ----------------------------------------------------
 wc = len(re.sub(r"[^A-Za-z0-9 ]", " ",
        MD.split("# Keywords")[0].split("# Abstract")[1]).split())
 MD = MD.replace("WORDCOUNT", str(wc))
+# ---- renumber citations by first appearance ----
+ORDER = []
+def _num(k):
+    if k not in ORDER:
+        ORDER.append(k)
+    return ORDER.index(k) + 1
+def _rep(m):
+    nums = sorted(_num(k.strip()) for k in m.group(1).split(","))
+    return "[" + ",".join(str(n) for n in nums) + "]"
+assert "{references}" not in MD or True
+MD = re.sub(r"\{([a-z0-9_,]+)\}", lambda m: _rep(m) if all(k.strip() in REFS for k in m.group(1).split(",")) else m.group(0), MD)
+# leftovers are not expected: fail loudly
+assert not re.search(r"\{[a-z0-9_,]+\}", MD), "unresolved citation token: " + str(re.findall(r"\{[a-z0-9_,]+\}", MD))
+MD += "\n".join(f"{i+1}. {REFS[k]}" for i, k in enumerate(ORDER)) + "\n"
+
 open(f"{MAN}/manuscript.md", "w").write(MD)
 print("word count (title→abstract):", wc)
 print("total words:", len(MD.split()))
