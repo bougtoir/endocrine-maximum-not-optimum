@@ -161,13 +161,11 @@ has not, to our knowledge, been tested in a quantitative model.
 Dose-response non-monotonicity is well documented pharmacologically
 (hormesis/U-shaped curves) [4], but those observations concern exogenous
 agonism of isolated targets, not the efficacy of an intact multi-loop
-feedback system under physiological challenge. In a companion study
-(Paper 1) we showed that increasing reaction capacity can redistribute
-rather than improve metabolic flux; here we test the complementary
-hypothesis at the level of endocrine feedback: **there exist interventions
-whose effect on whole-body homeostatic performance has an interior
-optimum u* in (0,1), i.e. moderate modulation outperforms both the
-unperturbed baseline and the maximal modulation.**
+feedback system under physiological challenge. Here, we test this
+hypothesis directly at the level of endocrine feedback: **there exist
+interventions whose effect on whole-body homeostatic performance has an
+interior optimum u* in (0,1), i.e. moderate modulation outperforms both
+the unperturbed baseline and the maximal modulation.**
 
 We formalise this in the revised Sorensen glucose–insulin–glucagon model
 [5] — a 26-state ODE system with explicit insulin and glucagon secretion,
