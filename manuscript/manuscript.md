@@ -1,5 +1,5 @@
 ---
-title: "Maximum hormonal action is not always optimal: interior optima of endocrine feedback efficacy in a previously validated glucose–insulin–glucagon model"
+title: "Maximum hormonal action is not always optimal: interior optima in a previously validated glucose–insulin–glucagon model"
 short_title: "Maximum is not optimum"
 word_count: 243
 ---
@@ -180,7 +180,7 @@ The strongest result is partial suppression of insulin secretion under
 IVGTT: u* = 0.83, with L falling from 234.42 at baseline to
 55.89, while full ablation (u = 1) gives 94.84 — worse than
 the optimum but still better than baseline, i.e. the dose-response has a
-genuine interior minimum (Figure 5A). Global inhibition of insulin
+genuine interior minimum (Figure 4A). Global inhibition of insulin
 action showed a parallel optimum at u* = 0.71 (L = 60.68).
 Under CIVII, modest potentiation of insulin secretion was optimal
 (u* = 0.51; L = 4.13 vs 28.06 at maximum),
@@ -193,7 +193,7 @@ continuous-infusion challenges (Table 2, Table 3).
 
 Because the composite loss is one scalarisation of homeostatic
 performance, each Type II case was also assessed on the glycaemic axes
-without weights (Figure 4, Table 3). All four optima are no worse than
+without weights (Figure 5, Table 3). All four optima are no worse than
 maximal modulation u = 1 on the glycaemic-burden axes — three strictly
 dominate u = 1 there, the OGTT case shows equal glycaemic burdens — and 2 of
 4 optima lie on the Pareto frontier (no other u is better on every
@@ -229,7 +229,7 @@ consistent with the islet's paradoxical feedback design [3].
 
 Beyond the insulin IVGTT cases, interior optima appear under
 continuous-infusion and disease contexts: CIVII insulin-secretion
-potentiation (u* = 0.51; Figure 5D), OGTT glucagon-secretion
+potentiation (u* = 0.51; Figure 4D), OGTT glucagon-secretion
 suppression (shallow, endpoint-dependent; u* = 0.88), and the
 disease-state analogues below — i.e. the phenomenon is not confined to
 one hormone, one direction of modulation, or a single challenge, though
@@ -243,16 +243,16 @@ definitions of homeostatic performance. Grid and solver checks confirmed
 classification stability — refined optima differed from coarse-grid
 estimates by ≤ 0.05 and tolerances rtol 1e-5/1e-7 did not change labels.
 Weight dependence was explicit. For each Type II case probed, 11 of
-12 weight perturbations (92 %) preserved Type II/II* classification;
-pooled across all 6 probed cases the fraction was
-46 % (72 perturbations: four loss-term families
-× ×0.5/×2/=0 per case).
-reverting when the glucose-band terms themselves were removed (removing
-the phenotype by construction) or when the optimum is shallow and the
-classification threshold is raised to 5 % (Figure 7). Cases whose
-optimum is driven by variability revert to Type 0 when variability terms
-are removed — these are endpoint-dependent and are labelled as such in
-Table 3.
+12 weight perturbations (92 %) preserved Type II/II* classification.
+Pooled across all 6 probed cases, 33 of 72
+perturbations (46 %) preserved Type II/II*; the
+12 perturbations per case comprised four loss-term families, each
+scaled by ×0.5, ×2 or 0. Classification reverted when the glucose-band
+terms themselves were removed (removing the phenotype by construction)
+or when the optimum was shallow and the classification threshold was
+raised to 5 % (Figure 7). Cases whose optimum is driven by variability
+revert to Type 0 when variability terms are removed — these are
+endpoint-dependent and are labelled as such in Table 3.
 
 ## Disease-state extensions
 

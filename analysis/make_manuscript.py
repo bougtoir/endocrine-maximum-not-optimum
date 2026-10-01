@@ -102,7 +102,7 @@ n_w_pert = len(rob_keep)           # total perturbations pooled
 
 # -------------------------------------------------------------------------
 MD = f"""---
-title: "Maximum hormonal action is not always optimal: interior optima of endocrine feedback efficacy in a previously validated glucose–insulin–glucagon model"
+title: "Maximum hormonal action is not always optimal: interior optima in a previously validated glucose–insulin–glucagon model"
 short_title: "Maximum is not optimum"
 word_count: WORDCOUNT
 ---
@@ -283,7 +283,7 @@ The strongest result is partial suppression of insulin secretion under
 IVGTT: u* = {F(isi)}, with L falling from {F(isi_L0)} at baseline to
 {F(isi_Lo)}, while full ablation (u = 1) gives {F(isi_L1)} — worse than
 the optimum but still better than baseline, i.e. the dose-response has a
-genuine interior minimum (Figure 5A). Global inhibition of insulin
+genuine interior minimum (Figure 4A). Global inhibition of insulin
 action showed a parallel optimum at u* = {F(isg)} (L = {F(isg_Lo)}).
 Under CIVII, modest potentiation of insulin secretion was optimal
 (u* = {F(insi_civ)}; L = {F(insi_civ_Lo)} vs {F(insi_civ_L1)} at maximum),
@@ -296,7 +296,7 @@ continuous-infusion challenges (Table 2, Table 3).
 
 Because the composite loss is one scalarisation of homeostatic
 performance, each Type II case was also assessed on the glycaemic axes
-without weights (Figure 4, Table 3). All four optima are no worse than
+without weights (Figure 5, Table 3). All four optima are no worse than
 maximal modulation u = 1 on the glycaemic-burden axes — three strictly
 dominate u = 1 there, the OGTT case shows equal glycaemic burdens — and {n_frontier} of
 {n_II} optima lie on the Pareto frontier (no other u is better on every
@@ -332,7 +332,7 @@ consistent with the islet's paradoxical feedback design [3].
 
 Beyond the insulin IVGTT cases, interior optima appear under
 continuous-infusion and disease contexts: CIVII insulin-secretion
-potentiation (u* = {F(insi_civ)}; Figure 5D), OGTT glucagon-secretion
+potentiation (u* = {F(insi_civ)}; Figure 4D), OGTT glucagon-secretion
 suppression (shallow, endpoint-dependent; u* = {F(gci_ogtt)}), and the
 disease-state analogues below — i.e. the phenomenon is not confined to
 one hormone, one direction of modulation, or a single challenge, though
@@ -346,16 +346,16 @@ definitions of homeostatic performance. Grid and solver checks confirmed
 classification stability — refined optima differed from coarse-grid
 estimates by ≤ 0.05 and tolerances rtol 1e-5/1e-7 did not change labels.
 Weight dependence was explicit. For each Type II case probed, 11 of
-12 weight perturbations (92 %) preserved Type II/II* classification;
-pooled across all {n_w_cases} probed cases the fraction was
-{F(frac_II,0)} % ({n_w_pert} perturbations: four loss-term families
-× ×0.5/×2/=0 per case).
-reverting when the glucose-band terms themselves were removed (removing
-the phenotype by construction) or when the optimum is shallow and the
-classification threshold is raised to 5 % (Figure 7). Cases whose
-optimum is driven by variability revert to Type 0 when variability terms
-are removed — these are endpoint-dependent and are labelled as such in
-Table 3.
+12 weight perturbations (92 %) preserved Type II/II* classification.
+Pooled across all {n_w_cases} probed cases, 33 of {n_w_pert}
+perturbations ({F(frac_II,0)} %) preserved Type II/II*; the
+12 perturbations per case comprised four loss-term families, each
+scaled by ×0.5, ×2 or 0. Classification reverted when the glucose-band
+terms themselves were removed (removing the phenotype by construction)
+or when the optimum was shallow and the classification threshold was
+raised to 5 % (Figure 7). Cases whose optimum is driven by variability
+revert to Type 0 when variability terms are removed — these are
+endpoint-dependent and are labelled as such in Table 3.
 
 ## Disease-state extensions
 
@@ -483,9 +483,14 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 doc = docx.Document()
 st = doc.styles["Normal"]; st.font.name = "Times New Roman"; st.font.size = Pt(11)
 
+TITLE = MD.split('"')[1]
+# Full-article word count excluding references and figure legends (JOE
+# counts the title page + main text; we use the abstract-to-declarations body)
+body_wc = len(re.sub(r"[^A-Za-z0-9 ]", " ",
+              MD.split("# References")[0].split("# Introduction")[1]).split())
+
 # Title page
-doc.add_heading(MD.split('"')[1] if '"' in MD.split('\n')[2] else
-                "Maximum hormonal action is not optimal", level=0)
+doc.add_heading(TITLE, level=0)
 doc.add_paragraph("Tatsuki Onishi")
 doc.add_paragraph("Affiliation: (to be completed)")
 doc.add_paragraph(f"Word count (abstract): {wc}")
@@ -578,40 +583,127 @@ for cap in [
     "Figure 1. Model validation: simulated (lines) vs upstream reference data (points) for glucose, insulin and insulin release under 100 g OGTT.",
     "Figure 2. Intervention convention. (A) Modulation factor f(u): potentiation 1+2u, inhibition 1−u. (B) Action-efficacy semantics: effective multiplier M_eff = 1 + s(M−1).",
     "Figure 3. Composite homeostatic loss L(u) for all interventions across the five challenges.",
-    "Figure 4. Weight-independent support: Pareto fronts of hypoglycaemic vs hyperglycaemic burden; labels give u. u* is no worse than u=1 on the glycaemic axes for all Type II cases; 2/4 lie on the frontier.",
-    "Figure 5. Glucose trajectories at baseline (u=0), interior optimum (u*) and maximum (u=1) for the four strict Type II cases.",
+    "Figure 4. Glucose trajectories at baseline (u=0), interior optimum (u*) and maximum (u=1) for the four strict Type II cases.",
+    "Figure 5. Weight-independent support: Pareto fronts of hypoglycaemic vs hyperglycaemic burden; labels give u. u* is no worse than u=1 on the glycaemic axes for all Type II cases; 2/4 lie on the frontier.",
     "Figure 6. Mechanism of the IVGTT interior optimum: insulin, glucagon and hepatic glucose production at u=0, u* and u=1.",
     "Figure 7. Dependence of the optimal modulation u* and classification on loss-function composition (colour bar = u*; cell labels = class).",
     "Figure 8. Loss curves under healthy, T2DM-like (insulin signalling halved) and T1DM-like (no endogenous insulin secretion) states for OGTT.",
 ]:
     doc.add_paragraph(cap)
+
+# JOE formatting: double line spacing throughout + continuous line numbering
+for p in doc.paragraphs:
+    p.paragraph_format.line_spacing = 2.0
+from docx.oxml.ns import qn
+from docx.oxml import OxmlElement
+for sec in doc.sections:
+    sectPr = sec._sectPr
+    if sectPr.find(qn("w:lnNumType")) is None:
+        ln = OxmlElement("w:lnNumType")
+        ln.set(qn("w:countBy"), "1"); ln.set(qn("w:start"), "0")
+        ln.set(qn("w:distance"), "240"); ln.set(qn("w:restart"), "continuous")
+        sectPr.append(ln)
 doc.save(f"{MAN}/manuscript.docx")
 print("docx written")
+
+# Separate title page file (JOE: title page uploaded separately)
+tp = docx.Document()
+tp.styles["Normal"].font.name = "Times New Roman"
+tp.styles["Normal"].font.size = Pt(11)
+tp.add_heading(TITLE, level=0)
+tp.add_paragraph("Short title: Maximum is not optimum")
+tp.add_paragraph("Author: Tatsuki Onishi")
+tp.add_paragraph("Affiliation: (to be completed)")
+tp.add_paragraph("Corresponding author: Tatsuki Onishi, "
+                 "bougtoir@gmail.com")
+tp.add_paragraph("Keywords: glucose homeostasis; insulin; glucagon; "
+                 "mathematical model; dose-response; feedback; "
+                 "Braess paradox; homeostatic regulation")
+tp.add_paragraph(f"Word count of full article (excluding references and "
+                 f"figure legends): {body_wc}")
+tp.save(f"{MAN}/title_page.docx")
+
+# Separate editable Word files for tables (JOE requirement)
+td = docx.Document()
+td.styles["Normal"].font.name = "Times New Roman"
+td.styles["Normal"].font.size = Pt(11)
+td.add_heading("Table 1. Interventions and modulation convention", level=2)
+tb = td.add_table(rows=1, cols=5); tb.style = "Table Grid"
+for j, c in enumerate(["Intervention", "Label", "Mode", "f(u=1)", "Description"]):
+    tb.rows[0].cells[j].text = c
+for _, r in t1.iterrows():
+    cells = tb.add_row().cells
+    cells[0].text = r.intervention; cells[1].text = r.label
+    cells[2].text = r["mode"]; cells[3].text = str(r.f_u_max)
+    cells[4].text = r.description
+td.add_heading("Table 2. Response classification across challenges "
+               "(refined u*)", level=2)
+tb = td.add_table(rows=1, cols=len(t2.columns)); tb.style = "Table Grid"
+for j, c in enumerate(t2.columns):
+    tb.rows[0].cells[j].text = str(c)
+for _, r in t2.iterrows():
+    cells = tb.add_row().cells
+    for j, c in enumerate(t2.columns):
+        v = r[c]
+        cells[j].text = f"{v:.2f}" if isinstance(v, float) else str(v)
+td.add_heading("Table 3. Evidence summary for all strict Type II cases", level=2)
+tb = td.add_table(rows=1, cols=len(cols3)); tb.style = "Table Grid"
+for j, c in enumerate(cols3):
+    tb.rows[0].cells[j].text = str(c)
+for _, r in t3.iterrows():
+    cells = tb.add_row().cells
+    for j, c in enumerate(cols3):
+        cells[j].text = str(r[c])
+td.save(f"{MAN}/tables.docx")
+print("title_page.docx + tables.docx written")
 
 # ---- Cover letter -------------------------------------------------------
 COVER = """Dear Editors,
 
-We submit the manuscript "Maximum hormonal action is not always optimal:
-interior optima of endocrine feedback efficacy in a previously validated
-glucose–insulin–glucagon model" for consideration in the Journal of
-Endocrinology.
+Endocrinology is fundamentally concerned with homeostasis, yet hormonal
+efficacy is usually described locally — how strongly a signal acts —
+rather than systemically, that is, how strongly it should act for the
+feedback system as a whole. In the enclosed manuscript, "Maximum
+hormonal action is not always optimal: interior optima in a previously
+validated glucose–insulin–glucagon model", we ask whether those two
+quantities are necessarily the same. We find that they are not always
+the same.
 
-Using a previously validated whole-body glucose–insulin–glucagon model
-(the Python port reproduced key upstream validation outputs), we show a
-subset of interventions exhibits strict interior optima — moderate
-modulation beats both baseline and maximum — arising from a Braess-like
-tension between opposing failure modes. The optima are stable to grid
-and solver checks, show explicit dependence on loss-function
-composition (reported with denominators), persist in insulin-resistant
-and insulin-deficient states, and receive exploratory corroboration in a
-minimal HPT-axis model.
+Using a previously validated 26-state whole-body
+glucose–insulin–glucagon model, we swept ten interventions that
+continuously scale insulin and glucagon signalling or secretion
+efficacy across five physiological challenges, and scored each response
+with a composite homeostatic loss complemented by a weight-independent
+Pareto analysis of the glycaemic axes. Four of fifty
+intervention–challenge combinations show strict interior optima:
+partial modulation outperforms both the unperturbed baseline and
+maximal modulation. The clearest case — partial suppression of insulin
+secretion under IVGTT — has an intuitive mechanism: limiting the
+insulin excursion prevents reactive hypoglycaemia while retaining
+enough action to clear the load. The phenomenon is not confined to one
+hormone, one direction of modulation or one challenge, and the optimal
+modulation shifts under insulin-resistant and insulin-deficient states.
 
-The study is fully reproducible: the complete pipeline, frozen upstream
-model code, all results, and the figures regenerate with a single
-command. This work is Paper 2 of a methodological series; it is
-self-contained and has not been published or submitted elsewhere. The
-author declares no competing interests. An AI assistant was used for
-implementation support, disclosed in the manuscript.
+We believe the conceptual advance matters to this journal's readers:
+the quantity pharmacology often maximises — local efficacy — is not
+necessarily the quantity physiology optimises — homeostasis. The
+interior optimum is the empirical result; the Braess-like regime we
+describe is our interpretation, offered as a testable framework for
+systems-level endocrine physiology. We deliberately make no
+clinical-dose inference, claim no universal Braess behaviour and no
+general superiority of partial modulation, and present our
+hypothalamic–pituitary–thyroid extension as exploratory,
+hypothesis-generating evidence only.
+
+The study is fully reproducible: the complete analysis pipeline, the
+frozen upstream model implementation with a provenance ledger, and all
+results and figures regenerate with a single command. The manuscript
+has not been published or submitted elsewhere. The author declares no
+competing interests. An AI assistant was used for implementation and
+drafting support, as disclosed in the manuscript.
+
+We hope you find the question — and the answer — worth the journal's
+attention.
 
 Sincerely,
 Tatsuki Onishi

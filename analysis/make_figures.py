@@ -129,7 +129,7 @@ def fig5_trajectories():
         ax.set_title(f"{LABEL[ivn]} × {CH_LABEL[ch]}")
         ax.set_xlabel("Time (min)"); ax.set_ylabel("Glucose (mg/dL)")
     axes.flat[0].legend(frameon=False, fontsize=7)
-    fig.tight_layout(); fig.savefig(f"{FIG}/fig5_trajectories.png"); plt.close(fig)
+    fig.tight_layout(); fig.savefig(f"{FIG}/fig4_trajectories.png"); plt.close(fig)
 
 
 def fig6_mechanism():
@@ -163,7 +163,7 @@ def fig4_pareto():
     ax.set_ylabel("Hypoglycaemic burden (mg/dL·min)")
     ax.set_title("Pareto front (lower-left is better); labels give u")
     ax.legend(frameon=False, fontsize=6)
-    fig.tight_layout(); fig.savefig(f"{FIG}/fig4_pareto.png"); plt.close(fig)
+    fig.tight_layout(); fig.savefig(f"{FIG}/fig5_pareto.png"); plt.close(fig)
 
 
 def fig7_weights():
