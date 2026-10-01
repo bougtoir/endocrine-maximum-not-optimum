@@ -1,9 +1,8 @@
 Dear Editors,
 
 We submit the manuscript "Maximum hormonal action is not always optimal:
-interior optima of endocrine feedback efficacy in a previously validated
-glucose–insulin–glucagon model" for consideration in the Journal of
-Endocrinology.
+interior optima in a previously validated glucose–insulin–glucagon model"
+for consideration in the Journal of Endocrinology.
 
 Using a previously validated whole-body glucose–insulin–glucagon model
 (the Python port reproduced key upstream validation outputs), we show a

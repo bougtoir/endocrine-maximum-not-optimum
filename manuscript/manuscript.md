@@ -1,5 +1,5 @@
 ---
-title: "Maximum hormonal action is not always optimal: interior optima of endocrine feedback efficacy in a previously validated glucose–insulin–glucagon model"
+title: "Maximum hormonal action is not always optimal: interior optima in a previously validated glucose–insulin–glucagon model"
 short_title: "Maximum is not optimum"
 word_count: 243
 ---

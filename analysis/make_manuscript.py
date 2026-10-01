@@ -102,7 +102,7 @@ n_w_pert = len(rob_keep)           # total perturbations pooled
 
 # -------------------------------------------------------------------------
 MD = f"""---
-title: "Maximum hormonal action is not always optimal: interior optima of endocrine feedback efficacy in a previously validated glucose–insulin–glucagon model"
+title: "Maximum hormonal action is not always optimal: interior optima in a previously validated glucose–insulin–glucagon model"
 short_title: "Maximum is not optimum"
 word_count: WORDCOUNT
 ---
@@ -483,9 +483,14 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 doc = docx.Document()
 st = doc.styles["Normal"]; st.font.name = "Times New Roman"; st.font.size = Pt(11)
 
+TITLE = MD.split('"')[1]
+# Full-article word count excluding references and figure legends (JOE
+# counts the title page + main text; we use the abstract-to-declarations body)
+body_wc = len(re.sub(r"[^A-Za-z0-9 ]", " ",
+              MD.split("# References")[0].split("# Introduction")[1]).split())
+
 # Title page
-doc.add_heading(MD.split('"')[1] if '"' in MD.split('\n')[2] else
-                "Maximum hormonal action is not optimal", level=0)
+doc.add_heading(TITLE, level=0)
 doc.add_paragraph("Tatsuki Onishi")
 doc.add_paragraph("Affiliation: (to be completed)")
 doc.add_paragraph(f"Word count (abstract): {wc}")
@@ -585,16 +590,79 @@ for cap in [
     "Figure 8. Loss curves under healthy, T2DM-like (insulin signalling halved) and T1DM-like (no endogenous insulin secretion) states for OGTT.",
 ]:
     doc.add_paragraph(cap)
+
+# JOE formatting: double line spacing throughout + continuous line numbering
+for p in doc.paragraphs:
+    p.paragraph_format.line_spacing = 2.0
+from docx.oxml.ns import qn
+from docx.oxml import OxmlElement
+for sec in doc.sections:
+    sectPr = sec._sectPr
+    if sectPr.find(qn("w:lnNumType")) is None:
+        ln = OxmlElement("w:lnNumType")
+        ln.set(qn("w:countBy"), "1"); ln.set(qn("w:start"), "0")
+        ln.set(qn("w:distance"), "240"); ln.set(qn("w:restart"), "continuous")
+        sectPr.append(ln)
 doc.save(f"{MAN}/manuscript.docx")
 print("docx written")
+
+# Separate title page file (JOE: title page uploaded separately)
+tp = docx.Document()
+tp.styles["Normal"].font.name = "Times New Roman"
+tp.styles["Normal"].font.size = Pt(11)
+tp.add_heading(TITLE, level=0)
+tp.add_paragraph("Short title: Maximum is not optimum")
+tp.add_paragraph("Author: Tatsuki Onishi")
+tp.add_paragraph("Affiliation: (to be completed)")
+tp.add_paragraph("Corresponding author: Tatsuki Onishi, "
+                 "bougtoir@gmail.com")
+tp.add_paragraph("Keywords: glucose homeostasis; insulin; glucagon; "
+                 "mathematical model; dose-response; feedback; "
+                 "Braess paradox; homeostatic regulation")
+tp.add_paragraph(f"Word count of full article (excluding references and "
+                 f"figure legends): {body_wc}")
+tp.save(f"{MAN}/title_page.docx")
+
+# Separate editable Word files for tables (JOE requirement)
+td = docx.Document()
+td.styles["Normal"].font.name = "Times New Roman"
+td.styles["Normal"].font.size = Pt(11)
+td.add_heading("Table 1. Interventions and modulation convention", level=2)
+tb = td.add_table(rows=1, cols=5); tb.style = "Table Grid"
+for j, c in enumerate(["Intervention", "Label", "Mode", "f(u=1)", "Description"]):
+    tb.rows[0].cells[j].text = c
+for _, r in t1.iterrows():
+    cells = tb.add_row().cells
+    cells[0].text = r.intervention; cells[1].text = r.label
+    cells[2].text = r["mode"]; cells[3].text = str(r.f_u_max)
+    cells[4].text = r.description
+td.add_heading("Table 2. Response classification across challenges "
+               "(refined u*)", level=2)
+tb = td.add_table(rows=1, cols=len(t2.columns)); tb.style = "Table Grid"
+for j, c in enumerate(t2.columns):
+    tb.rows[0].cells[j].text = str(c)
+for _, r in t2.iterrows():
+    cells = tb.add_row().cells
+    for j, c in enumerate(t2.columns):
+        v = r[c]
+        cells[j].text = f"{v:.2f}" if isinstance(v, float) else str(v)
+td.add_heading("Table 3. Evidence summary for all strict Type II cases", level=2)
+tb = td.add_table(rows=1, cols=len(cols3)); tb.style = "Table Grid"
+for j, c in enumerate(cols3):
+    tb.rows[0].cells[j].text = str(c)
+for _, r in t3.iterrows():
+    cells = tb.add_row().cells
+    for j, c in enumerate(cols3):
+        cells[j].text = str(r[c])
+td.save(f"{MAN}/tables.docx")
+print("title_page.docx + tables.docx written")
 
 # ---- Cover letter -------------------------------------------------------
 COVER = """Dear Editors,
 
 We submit the manuscript "Maximum hormonal action is not always optimal:
-interior optima of endocrine feedback efficacy in a previously validated
-glucose–insulin–glucagon model" for consideration in the Journal of
-Endocrinology.
+interior optima in a previously validated glucose–insulin–glucagon model"
+for consideration in the Journal of Endocrinology.
 
 Using a previously validated whole-body glucose–insulin–glucagon model
 (the Python port reproduced key upstream validation outputs), we show a
