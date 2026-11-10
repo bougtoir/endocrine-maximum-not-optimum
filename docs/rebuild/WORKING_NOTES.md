@@ -35,3 +35,16 @@ Panunzi 2020 PLoS ONE PDF/XML: data/raw/literature/ (ledger still TODO). Upstrea
   S 5 TypeII; O 4; C 3 TypeII = insulin_secretion@ogtt 0.50 (new), glucagon_secretion_inhibition@ogtt 0.85 (retained), insulin_secretion_inhibition@civii 0.45 (new).
   Original IVGTT x2 and CIVII insulin_secretion lost under S and C. CB (0.84 sens.) 5 TypeII all different (ivgtt/ogtt insulin-axis).
   => only 1/4 original strict Type II retained under pre-specified corrected reference; set of Type II cases unstable to observation scale.
+
+## Gate A done (commit 39539b4, PR #7 https://github.com/bougtoir/endocrine-maximum-not-optimum/pull/7). CONDITIONAL PASS for config C. User informed (Japanese). Blueprint saved (octave, poppler). Memory note written.
+
+## Gate B plan (in progress)
+Objective (src/homeostatic_loss.py): L = sum_k w_k * E_k / NORM_k over 15 endpoints; nonzero w: hypo 10/100, hyper 5/2000, SD 5/20,
+RMSD(successive diff) 20/5, recovery 0.5/120, undershoot 2/20, insulin AUC 0.02/1e4, glucagon AUC 0.002/3e3. NORM fixed across u and challenges.
+Endpoints (src/endpoints.py): window t>=0 to challenge t_end (fasting 600, ivgtt 180, ogtt 300, ivitt 180, civii 330); 0.5-min grid; trapezoid;
+thresholds 70/140, target 90 (target unused, w=0); recovery = last time |g-g(0)| > 10% of max excursion (no explicit non-recovery penalty;
+capped at window length, e.g. OGTT 300); undershoot = g(0)-nadir. Classification classify_response rel_thresh 0.02.
+Steps: B1 spec md; B2 decomposition (H: 4 orig cases; C: 3 C TypeII + 4 orig) at u=0/u*/u=1 -> GATE_B_LOSS_DECOMPOSITION.csv;
+B3 predefined weight sets (orig, no-exposure, glycemic-heavy, hypo x3, equal-norm, alt-risk e.g. abs_dev / LBGI-HBGI) -> GATE_B_WEIGHT_SENSITIVITY.csv;
+B4 strict audit incl. grid refinement (0.01 local), solver (rtol 1e-9, LSODA), near-optimal width; B5 Pareto (hypo, hyper, SD?) reconcile.
+Reuse corrected_scan_endpoints.csv (configs H/S/O/C, 21-pt grid) for recomputing losses under alternative weights without re-simulating.
