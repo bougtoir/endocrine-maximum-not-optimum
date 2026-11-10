@@ -53,3 +53,6 @@ Reuse corrected_scan_endpoints.csv (configs H/S/O/C, 21-pt grid) for recomputing
   glucose SD, RMSD (successive-diff; IVGTT ~29-32 constant from bolus spike), undershoot, recovery. C insulin_secretion@ogtt: u=1 loses via hypo (14.2);
   C insulin_secretion_inhibition@civii: baseline hypo 71 -> u*=0.45 0.02 vs u=1 hyper 3.5 + SD. C glucagon_secr_inhib@ogtt: gain from recovery/undershoot only (no hypo/hyper change; SD worsens).
   Next: B3 weight sensitivity (recompute from endpoints CSV), B4 strict audit (grid 0.01 refine, solver), B5 Pareto (analysis/run_pareto.py pareto_front(df,a,b)).
+- B3 done: GATE_B_WEIGHT_SENSITIVITY(.csv,_SUMMARY.csv). 8 predefined sets W0..W7. Under C the 3 C-cases survive in W0-W4,W6 (6/8 sets); W5 equal keeps 2, W7 baseline-norm keeps 0
+  (gives 2 fasting cases instead). Under H the original 4 all survive only in W0/W1 (W2 3/4, W3 2/4, W4 3/4, W5 2/4, W6 3/4, W7 2/4).
+  Strict Type II count ranges 2-7 (C) and 2-7 (H) across sets -> case identity weight-dependent; removing exposure terms ADDS cases (exposure not driving).

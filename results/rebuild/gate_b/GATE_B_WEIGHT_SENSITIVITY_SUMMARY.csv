@@ -1,0 +1,17 @@
+config,weight_set,n_strict_typeII,n_typeII_star,original4_retained,C_W0_cases_retained,typeII_cases
+C,W0_original,3,2,1.0,3.0,glucagon_secretion_inhibition@ogtt; insulin_secretion@ogtt; insulin_secretion_inhibition@civii
+C,W1_no_exposure,5,2,1.0,3.0,glucagon_secretion_inhibition@ogtt; glucagon_signal_inhibition@fasting; insulin_secretion@ogtt; insulin_secretion_inhibition@civii; insulin_signal_global_inhibition@fasting
+C,W2_glycemic_risk_x3,5,0,1.0,3.0,glucagon_secretion_inhibition@ogtt; insulin_secretion@ogtt; insulin_secretion_inhibition@civii; insulin_signal_global@ivgtt; insulin_signal_peripheral@ivgtt
+C,W3_hypo_x3,4,0,1.0,3.0,glucagon_secretion_inhibition@ogtt; insulin_secretion@ogtt; insulin_secretion_inhibition@civii; insulin_signal_peripheral@ivgtt
+C,W4_burden_only,5,0,1.0,3.0,glucagon_secretion_inhibition@ogtt; insulin_secretion@ogtt; insulin_secretion_inhibition@civii; insulin_signal_global@ivgtt; insulin_signal_peripheral@ivgtt
+C,W5_equal_normalised,5,2,0.0,2.0,glucagon_secretion@civii; glucagon_secretion@ivitt; insulin_secretion@ogtt; insulin_secretion_inhibition@civii; insulin_signal_global_inhibition@civii
+C,W6_target_deviation_risk,7,0,1.0,3.0,glucagon_secretion@fasting; glucagon_secretion_inhibition@ogtt; insulin_secretion@ogtt; insulin_secretion_inhibition@civii; insulin_secretion_inhibition@fasting; insulin_signal_global@ivgtt; insulin_signal_peripheral@ivgtt
+C,W7_baseline_normalised,2,0,0.0,0.0,glucagon_signal_inhibition@fasting; insulin_signal_global_inhibition@fasting
+H,W0_original,4,1,4.0,1.0,glucagon_secretion_inhibition@ogtt; insulin_secretion@civii; insulin_secretion_inhibition@ivgtt; insulin_signal_global_inhibition@ivgtt
+H,W1_no_exposure,6,1,4.0,1.0,glucagon_secretion_inhibition@ogtt; insulin_secretion@civii; insulin_secretion_inhibition@ivgtt; insulin_signal_global_inhibition@fasting; insulin_signal_global_inhibition@ivgtt; insulin_signal_hepatic@fasting
+H,W2_glycemic_risk_x3,3,0,3.0,1.0,glucagon_secretion_inhibition@ogtt; insulin_secretion_inhibition@ivgtt; insulin_signal_global_inhibition@ivgtt
+H,W3_hypo_x3,2,1,2.0,1.0,glucagon_secretion_inhibition@ogtt; insulin_secretion_inhibition@ivgtt
+H,W4_burden_only,4,0,3.0,2.0,glucagon_secretion_inhibition@ogtt; insulin_secretion_inhibition@civii; insulin_secretion_inhibition@ivgtt; insulin_signal_global_inhibition@ivgtt
+H,W5_equal_normalised,7,0,2.0,2.0,glucagon_secretion@ivitt; glucagon_secretion_inhibition@civii; insulin_secretion@ogtt; insulin_secretion_inhibition@civii; insulin_secretion_inhibition@ivgtt; insulin_secretion_inhibition@ivitt; insulin_signal_global_inhibition@ivgtt
+H,W6_target_deviation_risk,5,0,3.0,2.0,glucagon_secretion@fasting; glucagon_secretion_inhibition@ogtt; insulin_secretion@ogtt; insulin_secretion_inhibition@ivgtt; insulin_signal_global_inhibition@ivgtt
+H,W7_baseline_normalised,4,2,2.0,0.0,insulin_secretion_inhibition@ivgtt; insulin_signal_global_inhibition@fasting; insulin_signal_global_inhibition@ivgtt; insulin_signal_hepatic@fasting
