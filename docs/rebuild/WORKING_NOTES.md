@@ -59,3 +59,9 @@ Reuse corrected_scan_endpoints.csv (configs H/S/O/C, 21-pt grid) for recomputing
 - B4 done: GATE_B_STRICT_TYPEII_AUDIT.csv + fine_curves/. All classifications identical across 21-pt grid, 101-pt grid, tight tol (rtol1e-10).
   u* shifts <=0.03 on refinement. C cases rel gain vs better endpoint: glucagon_secr_inhib@ogtt 6.9% (near-opt band 0.54-0.97, wide),
   insulin_secretion@ogtt 34% (0.39-0.58), insulin_secr_inhib@civii 43% (0.43-0.94). Numerical stability != physiological robustness.
+- B5 done: GATE_B_PARETO.csv (hypo, hyper, SD). NO strict Type II case (H or C) has an interior u Pareto-dominating both u=0 and u=1.
+  C glucagon_secr_inhib@ogtt: frontier = {u=0} only -> composite optimum dominated by baseline on glycaemic axes (gain only via recovery/undershoot/RMSD).
+  C insulin_secretion@ogtt dominates u=0 but not u=1; C insulin_secr_inhib@civii dominates neither -> weight-dependent hypo/hyper trade-offs.
+  Only weight-independent interior dominance: fasting TypeIII plateaus (negligible magnitude).
+- Overlap (GATE_B_ENDPOINT_OVERLAP.csv): SD~RMSD rho .93 pooled (1.00 OGTT), hypo~undershoot .83; IVGTT RMSD~recovery -.99 -> double counting of variability & hypo.
+- Gate B verdict planned: FAIL (confirmatory) -> stop; Gate C not started confirmatorily.
