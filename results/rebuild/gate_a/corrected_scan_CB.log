@@ -1,0 +1,9 @@
+response_class  Type0  TypeI  TypeII  TypeII*  TypeIII
+config                                                
+CB                 26     14       5        1        4
+config                     intervention challenge  u_opt
+    CB        insulin_signal_peripheral     ivgtt   0.45
+    CB insulin_signal_global_inhibition     ivgtt   0.65
+    CB     insulin_secretion_inhibition     ivgtt   0.30
+    CB insulin_signal_global_inhibition      ogtt   0.60
+    CB     insulin_secretion_inhibition      ogtt   0.35
