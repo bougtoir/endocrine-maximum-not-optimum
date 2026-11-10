@@ -48,3 +48,8 @@ Steps: B1 spec md; B2 decomposition (H: 4 orig cases; C: 3 C TypeII + 4 orig) at
 B3 predefined weight sets (orig, no-exposure, glycemic-heavy, hypo x3, equal-norm, alt-risk e.g. abs_dev / LBGI-HBGI) -> GATE_B_WEIGHT_SENSITIVITY.csv;
 B4 strict audit incl. grid refinement (0.01 local), solver (rtol 1e-9, LSODA), near-optimal width; B5 Pareto (hypo, hyper, SD?) reconcile.
 Reuse corrected_scan_endpoints.csv (configs H/S/O/C, 21-pt grid) for recomputing losses under alternative weights without re-simulating.
+- B2 done: results/rebuild/gate_b/GATE_B_LOSS_DECOMPOSITION.csv (analysis/rebuild/gate_b_loss_decomposition.py). Exposure terms (insulin+glucagon AUC)
+  contribute <=0.13 loss units (<2%) in every case/point -> optima NOT driven by hormone-exposure penalties (contra R1). Loss dominated by hypo burden,
+  glucose SD, RMSD (successive-diff; IVGTT ~29-32 constant from bolus spike), undershoot, recovery. C insulin_secretion@ogtt: u=1 loses via hypo (14.2);
+  C insulin_secretion_inhibition@civii: baseline hypo 71 -> u*=0.45 0.02 vs u=1 hyper 3.5 + SD. C glucagon_secr_inhib@ogtt: gain from recovery/undershoot only (no hypo/hyper change; SD worsens).
+  Next: B3 weight sensitivity (recompute from endpoints CSV), B4 strict audit (grid 0.01 refine, solver), B5 Pareto (analysis/run_pareto.py pareto_front(df,a,b)).
