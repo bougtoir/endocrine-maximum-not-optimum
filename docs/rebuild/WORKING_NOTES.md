@@ -56,3 +56,6 @@ Reuse corrected_scan_endpoints.csv (configs H/S/O/C, 21-pt grid) for recomputing
 - B3 done: GATE_B_WEIGHT_SENSITIVITY(.csv,_SUMMARY.csv). 8 predefined sets W0..W7. Under C the 3 C-cases survive in W0-W4,W6 (6/8 sets); W5 equal keeps 2, W7 baseline-norm keeps 0
   (gives 2 fasting cases instead). Under H the original 4 all survive only in W0/W1 (W2 3/4, W3 2/4, W4 3/4, W5 2/4, W6 3/4, W7 2/4).
   Strict Type II count ranges 2-7 (C) and 2-7 (H) across sets -> case identity weight-dependent; removing exposure terms ADDS cases (exposure not driving).
+- B4 done: GATE_B_STRICT_TYPEII_AUDIT.csv + fine_curves/. All classifications identical across 21-pt grid, 101-pt grid, tight tol (rtol1e-10).
+  u* shifts <=0.03 on refinement. C cases rel gain vs better endpoint: glucagon_secr_inhib@ogtt 6.9% (near-opt band 0.54-0.97, wide),
+  insulin_secretion@ogtt 34% (0.39-0.58), insulin_secr_inhib@civii 43% (0.43-0.94). Numerical stability != physiological robustness.
