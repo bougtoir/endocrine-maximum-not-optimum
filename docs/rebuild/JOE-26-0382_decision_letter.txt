@@ -1,0 +1,192 @@
+10-Nov-2026
+
+Dear Mr. Tatsuki:
+
+JOE-26-0382
+Maximum hormonal action is not always optimal: interior optima in a previously validated glucose-insulinglucagon model
+
+Thank you for submitting your paper to Journal of Endocrinology. It has now been read by a member of the editorial board and appropriate referees. I regret to inform you that it is at present considered unsuitable for publication for the reasons set out in the following reviewer reports.
+
+However, we feel that your paper does have potential for publication and that if you are able to deal satisfactorily with the comments raised by the referees and senior editor, which are likely to require significant additional work, we would be prepared to consider a substantially revised version of your paper.
+
+Should you decide to resubmit a version of this manuscript, please go to http://mc.manuscriptcentral.com/sfe-joe and login to your Author Centre. Click on 'Manuscripts with Decisions', and then on 'Create a Resubmission'.
+Please note that resubmitted manuscripts are treated as new papers and will be subject to a full review process and may be sent to new referees. The paper will be assigned a new manuscript number.
+If you choose not to send a revised version back to Journal of Endocrinology, please notify the Editorial Office of your decision to withdraw the manuscript from consideration
+
+Thank you for choosing to submit your work to Journal of Endocrinology.
+
+Yours sincerely,
+Dr. Gabriela da Silva Xavier
+Co-Editor-in-Chief, Journal of Endocrinology
+joe@bioscientifica.com
+
+-----------------------------------------
+Senior Editor's Comments to Author:
+
+Senior Editor
+Comments to the Author - REQUIRED:
+Thanks for choosing to submit your article to the Journal of Endocrinology. Based on the reviewers comments, I'm afraid I have to recommend to reject your manuscript in its current form. If you're able to resolve the issues raised, we look forward to reconsider a new version of your manuscript in the future.
+
+Reviewers' Comments to Author:
+
+Reviewer: 1
+
+Comments to the Author
+Please see the attached file.
+
+Reviewer: 2
+
+Comments to the Author
+This manuscript investigates whether intermediate changes in hormone secretion or signaling can outperform both the unmodified model and maximal intervention in a revised Sorensen glucose-insulin-glucagon model. The systematic intervention scan, numerical checks and complementary Pareto analysis are useful features. However, the scientific advance beyond established glucose-control trade-offs remains insufficiently defined. The physiological interpretation of the interventions, the specification of the composite loss and the relevance of the findings beyond the selected simulations require substantial clarification and, in several areas, additional analysis. My major and minor concerns are detailed below.
+
+Major concerns
+1 Clarify the novelty and demonstrate the proposed mechanism
+The general principle that stronger hormonal action can improve one outcome while worsening another is familiar in glucose regulation. Please state precisely what new physiological insight or quantitative prediction follows from finding four interior optima in the selected model. The contribution should be distinguished from earlier work on glucose-clearance versus insulin-sparing trade-offs and insulin-glucagon feedback, including Wang (2012) and Garzilli and Itzkovitz (2018), which are already cited.
+An interior minimum of a weighted objective can arise from competing penalties without a specific feedback-network mechanism. The current simulations therefore do not, by themselves, establish the proposed causal interpretation. Please identify the feedback links and delays actually represented in the model and test their contribution through targeted perturbations, maintaining comparable reference behavior where possible. Alternatively, narrow the mechanistic claims. The Braess analogy should remain clearly distinguished from the numerical observation. (Introduction, lines 57-75; Discussion, lines 250-287.)
+2 Provide the complete composite loss function
+The loss function defines optimality and should be understandable without reconstructing the repository code. Please provide its exact formula, identify which of the 15 computed endpoints enter the objective, and report every weight, normalization scale and unit. Specify integration windows, recovery criteria, penalties for non-recovery and the definition of endocrine exposure. Clarify whether scales are fixed across intervention settings and whether the objective or scales differ between challenges.
+For each principal Type II case, please show the individual endpoints and their weighted contributions at baseline, the selected optimum and maximal intervention. Justify the physiological priorities, especially hormone-exposure penalties, and explain possible overlap among endpoints. This is essential for interpreting cases where the score improves without a reduction in out-of-band glucose burden. Core definitions belong in the main text, with detailed algorithms in supplementary material. (Methods, lines 111-129; Table 3.)
+3 Establish the credibility and physiological robustness of the model simulations
+1)  Figure 1 shows that the model does not adequately reproduce the observed OGTT glucose trajectory, raising concerns about its reliability for evaluating glucose homeostasis and identifying optimal hormonal interventions.
+2) The main IVGTT example begins with a simulated insulin peak of approximately 1349 mU/L and glucose nadir near 40 mg/dL; strong inhibition of the secretion rule is then favorable. The author acknowledges that the hypoglycemia is unusually pronounced. Please establish whether this result reflects a robust physiological trade-off or correction of an overreactive reference parameterization. Compare the intravenous simulations with the upstream implementation and appropriate experimental observations, and document parameter choices for oral versus intravenous protocols, concentration units and the sampled compartment.
+Please assess the persistence and depth of the optima across plausible secretion, insulin-action, delay and starting-state parameters. The acknowledged 14 mg/dL glucose offset also warrants attention because the burden calculations use fixed thresholds. Grid and solver checks do not establish robustness to physiological uncertainty. The statement that the existence of an interior optimum is not model-dependent should be supported or qualified. (Lines 78-92, 195-208 and 296-300.)
+4 Define the interventions and justify their physiological interpretation
+Please explicitly relate the intervention dial u, the generic scaling function f(u) and the signaling factor s(u), and map every intervention to the exact equations it modifies. Distinguish direct scaling of secretion from scaling the deviation of an action multiplier around its neutral value. Setting s to zero makes the effective multiplier equal to one, not zero. Please justify describing this endpoint as complete insulin resistance and specify the reference contributions that remain. Likewise, threefold scaling of the deviation is not necessarily a threefold change in metabolic flux.
+Please justify the threefold enhancement limit and the 0.05 floor, report whether clipping is active in the principal cases, and examine sensitivity to these choices. Specify whether modulation is applied acutely or after equilibration at each setting. This matters because secretion scaling can alter basal hormone supply, whereas signaling scaling preserves the neutral multiplier when its native value is one. (Lines 96-109; Figure 2; Table 1.)
+5 Explain the relevance to real endocrine regulation
+Controlled challenges are useful probes of physiology, but a fixed intervention optimized separately for each protocol does not establish an adaptive regulatory strategy or a benefit in other settings. Please explain which experimentally testable implication follows from these results and under what conditions it should hold. Demonstrating persistence in relevant oral or mixed-nutrient scenarios, different starting conditions or repeated disturbances would strengthen this bridge; otherwise, the conclusions should remain explicitly challenge-specific.
+The T2DM-like and T1DM-like configurations are simplified perturbations, rather than complete disease representations. In particular, retaining glucagon secretion after removing insulin secretion is reasonable, but does not establish that diabetic glucagon dysregulation is reproduced. Please clarify the scope of these extensions. The unfitted HPT example illustrates another possible optimum, but does not independently validate physiological generality. I do not request clinical dose inference; I request a clearer connection between the computational finding and the claimed physiological contribution. (Lines 134-145, 233-249 and 288-309.)
+6 Align robustness and Pareto claims with the primary hypothesis
+The reported 92% retention combines Type II with Type II*, although Type II* does not necessarily outperform maximal intervention and therefore does not preserve the primary strict-optimum claim. Please report strict Type II retention separately, define the classification thresholds and include all four original Type II cases; Table 3 marks the CIVII case as not covered. Explain the selection of the six sensitivity cases and provide their individual results alongside the pooled summary.
+Please also distinguish dominance over maximal intervention, dominance over baseline and membership of the selected Pareto frontier. Only two of the four optima are reported on the three-outcome glycemic frontier. For the other cases, explain which additional loss terms favor the selected setting over alternatives that dominate it on those glycemic outcomes. This would make the endpoint dependence interpretable. (Lines 124-145, 171-191 and 216-229; Tables 2-3; Figures 5 and 7.)
+
+Minor concerns
+1. Table 3 is difficult to read and would benefit from a landscape or supplementary layout with clear headers and units. Define G0 and G1 in Table 2 and replace unexplained nan entries with an appropriate notation. Separate or magnify shallow loss curves so their minima can be assessed visually.
+2. Please clarify whether u* = 0.83 applies to all the panels in Figure 6. If not, make the legend and text consistent.
+3. Please define all abbreviations at their first occurrence in the manuscript.
+In summary, the manuscript should be strengthened by making the objective fully transparent, validating the responses that drive the main finding, and demonstrating what new physiological understanding follows from the interior optima. These issues should be addressed before the broader conclusions can be assessed.
+
+
+EDITORIAL COMMENTS
+
+AI Disclosure
+
+We ask all authors to disclose in a statement whether or not they have used generative AI in the preparation of their manuscript. If authors have used written or visual content produced by or edited using a generative AI technology, this must be acknowledged. This explanation must list the name, version, model, and source of the generative AI technology. Where no AI technology has been used in the preparation of the manuscript, please state the following:
+
+“No generative Artificial Intelligence (AI) tools were used in the preparation of the written or visual content of this manuscript.”
+
+Our full publisher policy on use of Large Language Models and other AI technologies can be found on our Ethical Policies page.
+
+
+Journal of Endocrinology Editorial Office
+
+Bioscientifica Ltd. | Starling House | 1600 Parkway North | Bristol | BS34 8YU | United Kingdom
+Reg in England no. 3190519
+
+Peer Review Report
+• Journal: Journal of Endocrinology
+• Manuscript Title: Maximum hormonal action is not always optimal:
+interioroptimainapreviouslyvalidatedglucose-insulinglucagonmodel
+• Author: Tatsuki, Onishi
+Summary of the Work
+The manuscript investigates whether maximal endocrine modulation yields
+optimal homeostatic performance within a previously published 26-state
+mathematicalmodelofglucose-insulin-glucagondynamics(arevisedSorensen
+model). By applying a uniform scaling parameter u ∈ [0, 1] across ten in-
+dividual intervention axes and five physiological challenges, the author eval-
+uates performance using a composite loss function penalizing glycemic bur-
+den, variability, recovery time, and endocrine exposure, alongside a Pareto
+analysis of glycemic axes•
+The author identifies interior optima (u ∈ (0, 1)) in 4 out of 50 inter-
+vention–challenge combinations (most notably partial suppression of insulin
+secretion during an IVGTT) and suggests that maximal endocrine action can
+be suboptimal in complex feedback systems, drawing an analogy to Braess-
+like regimes in control theory.
+General Evaluation
+The manuscript is well-written, clearly structured, and mathematically con-
+sistent within the boundary conditions set by the author. The exploration
+of non-monotonic responses in multi-variable endocrine feedback loops is an
+intriguing theoretical exercise.
+However, the manuscript suﬀers from critical methodological limitations
+in its parameter exploration strategy and a fundamental lack of physiological
+1
+grounding. Rather than demonstrating a robust biological principle, the
+reported"interioroptima"appeartobesensitivemathematicalconsequences
+of a specifically weighted, composite loss function applied to a single, static
+nominal parameter set. Consequently, I cannot recommend this manuscript
+for publication in the Journal of Endocrinology.
+Major Comments
+• Loss Function Artifact vs. Physiological Insight: While demonstrating
+non-monotonicity in system performance is conceptually interesting,
+finding an interior optimum (u ∈ (0, 1)) is an almost inevitable math-
+ematical outcome when using a composite loss function that explicitly
+penalizes high hormone exposure alongside glycemic burden. The au-
+thor notes that classification of these optima drops to 46% upon pooled
+weight perturbations. This strongly suggests that these "interior op-
+tima"arefine-tunedartifactsofthechosencost-functionweightsrather
+than an inherent, robust feature of human glucose homeostasis.
+• Reliance on a Single Nominal Parameter Set: While starting with a
+nominal reference patient is standard practice in mathematical model-
+ing,claimingageneralsystem-levelphenomenon(a"Braess-likeregime")
+based on a single parameterization is an overreach. Human glucose
+regulation exhibits extensive inter-individual variability driven by ge-
+netics, epigenetics, andmetabolicstate. Withouttestingwhetherthese
+interior optima persist across realistic virtual patient populations (e.g.,
+parameter distributions reflecting varying tissue sensitivities and clear-
+ance rates), it is impossible to determine whether this result holds any
+actual biological or clinical relevance.
+• One-at-a-Time (OAT) Parameter Slices in Isolation: Although the au-
+thor incorporates Pareto analysis on the resulting glycemic axes, the
+interventions themselves are generated by sweeping a single scaling pa-
+rameter u along isolated 1D axes while keeping all other system param-
+eters fixed. In biological feedback networks, parameters do not scale in
+isolation; forcing a single secretion or signaling link down while holding
+surrounding regulatory gains static creates unphysiological topologies
+that ignore natural physiological compensation.
+• Arbitrary Interventions and Lack of Physiological Justification for Pa-
+rameter Selection: Scaling signaling or secretion eﬃcacy by an isolated
+2
+uniform factor u ∈ [0, 1] lacks clear physiological or clinical grounding.
+Specifically, the author provides no rationale for why maximum poten-
+tiation is bounded at an arbitrary 3-fold increase (3.0) or why inhibi-
+tion must scale linearly down to absolute zero. In biological reality,
+receptor densities, maximum secretory capacities (Vmax), and signal
+transduction gains do not scale uniformly or arbitrarily by a factor of
+three across distinct biochemical axes. While the choice of individ-
+ual intervention axes (e.g., peripheral versus hepatic insulin signaling,
+beta-cell capacity, and alpha-cell glucagon secretion) is conceptually
+intuitive, treating them as independent, decoupled dials ignores phys-
+iological cross-talk, and the potential sensitivity of model behavior to
+variations in unperturbed parameters is entirely dismissed. A system-
+aticparameterexploration—suchasaformalglobalsensitivityanalysis
+(GSA) or multi-dimensional parameter space mapping—is required to
+justify why these specific target axes were selected, how they interact
+with underlying system stiﬀness, and whether they represent realistic
+physiological perturbations.
+Minor Comments & Recommendations for the Au-
+thor
+• If the author wishes to develop this concept into a robust study, the
+framework should be evaluated across heterogeneous virtual cohorts
+(sampling parameter distributions) to test whether interior optima are
+structurally stable across population variance.
+• The claim of a "Braess-like regime" should be moderated or re-framed
+within standard control-theoretic trade-oﬀs (e.g., gain tuning, over-
+shoot vs. settling time) unless structural network rerouting can be
+explicitly demonstrated.
+Recommendation
+Rejection. While the simulation execution is clear and the author deserves
+credit for transparency—openly acknowledging limitations such as weight
+dependence, single-subject parameterization, and endpoint sensitivity—the
+coreconclusionsremainunconvincing. Explicitlyconcedingtheseconstraints
+does not validate overreaching claims that these findings represent a gen-
+eral biological "Braess-like regime." In physical or traﬃc networks, Braess’s
+3
+paradox arises from structural topology changes or capacity additions that
+fundamentally alter path routing. Here, by contrast, the reported "interior
+optima" are largely driven by a penalization cost function that trades oﬀ
+clearance speed against counter-regulatory hormone exposure, compounded
+by isolated parameter sweeps on a single nominal model. Consequently, the
+work in its current form does not oﬀer a suﬃciently grounded, physiologi-
+cally robust, or generalizable contribution to the understanding of glucose
+homeostasis.
+4

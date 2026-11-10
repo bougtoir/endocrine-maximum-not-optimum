@@ -1,0 +1,27 @@
+response_class  Type0  TypeI  TypeII  TypeII*  TypeIII
+config                                                
+C                  24     12       3        2        9
+H                  25     12       4        1        8
+O                  25     12       4        1        8
+S                  22     14       5        0        9
+config                     intervention challenge  u_opt
+     H insulin_signal_global_inhibition     ivgtt   0.70
+     H     insulin_secretion_inhibition     ivgtt   0.85
+     H    glucagon_secretion_inhibition      ogtt   0.85
+     H                insulin_secretion     civii   0.50
+     S insulin_signal_global_inhibition   fasting   0.85
+     S                insulin_secretion     ivgtt   0.25
+     S    glucagon_secretion_inhibition      ogtt   0.85
+     S     insulin_secretion_inhibition     civii   0.15
+     S               glucagon_secretion     civii   0.30
+     O     insulin_secretion_inhibition     ivgtt   0.85
+     O                insulin_secretion      ogtt   0.50
+     O    glucagon_secretion_inhibition      ogtt   0.85
+     O     insulin_secretion_inhibition     civii   0.20
+     C                insulin_secretion      ogtt   0.50
+     C    glucagon_secretion_inhibition      ogtt   0.85
+     C     insulin_secretion_inhibition     civii   0.45
+
+real	3m37.633s
+user	6m16.076s
+sys	0m0.955s
