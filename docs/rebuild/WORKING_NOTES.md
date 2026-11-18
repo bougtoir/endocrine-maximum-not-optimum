@@ -69,3 +69,11 @@ Reuse corrected_scan_endpoints.csv (configs H/S/O/C, 21-pt grid) for recomputing
 ## Gate C (exploratory) — started 2026-11-18 on branch devin/1794964179-joe-gate-c-exploratory (from a770f49). Plan: results/rebuild/gate_c/GATE_C_PLAN.md.
 User accepted no recommendation explicitly; instead supplied exploratory Gate C prompt (docs/rebuild/JOE_GATE_C_EXPLORATORY_DEVIN_PROMPT.txt).
 Gate B FAIL remains recorded; Gate C is exploratory. Calibrated decision categories: SCIENTIFIC DISCOVERY GO / CONDITIONAL GO / METHODS-THEORY PIVOT / NO-GO-FREEZE; separately JOE RESUBMISSION READY / CONDITIONAL / NOT READY.
+### Gate C C1/C2 findings (2026-11-18)
+- C1: secretion axes not basal-neutral (u=1 run-in drift: ins_secr G0 70.5 OGTT; glucagon_secr_inhib G0 70.0; ins_secr_inhib G0 97.9). Signalling axes basal-neutral. Clip floor binds only for insulin_signal_global/hepatic potentiation (MIHGPinf, up to 67% OGTT). U_GRID is 21 points (C1 cap 1500 exceeded: 2244 evals; logged).
+- Sorensen thesis pp.276-278: IVITT basal plasma 91 (GPV 98), 13 mU/L, glucagon 120 pg/mL (Gerich 1980 n=15); CIVII basal plasma 90 (GPV 97), 11 mU/L (Sacca 1979 n=5); CIVII hypoglycaemic steady state is intended physiology.
+- C1 basal: plasma 90 basal -> case a, c become TypeI; case b u* 0.45->0.15; insulin 0.7x -> case b TypeI.
+- C2 (1203 evals): nadir/peak/min<70/hypo/hyper monotone in u for all cases & perturbations (nonmono<=0); only recovery-time / last-outside threshold-time metrics non-monotone.
+  a: TypeII robust to preserved-basal ablations; u* moves with insulin-action delay (tau x0.5 ->0.70, x2 ->0.30) and potentiator speed; = gain-delay trade-off (known control). 
+  b: u* tracks infusion non-smoothly (x0.5 .70, x0.75 .85, x1 .45, x1.25 .75, x1.6 TypeI); counterregulation clamp -> TypeI (non-comparable); exogenous-excess vs endogenous withdrawal, threshold driven.
+  c: P1 (onset t=0) and P3 (re-equilibrated) -> Type0: run-in artifact. A2 -> TypeIII.
