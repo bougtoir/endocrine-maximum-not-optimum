@@ -1,7 +1,7 @@
 a max |dG| custom vs run_challenge (mg/dL): 0.0
 b max |dG| custom vs run_challenge (mg/dL): 0.0
 c max |dG| custom vs run_challenge (mg/dL): 0.0
-[gate_c2_mechanism] evaluations=1203 cap=2000 wall=53.7s
+[gate_c2_mechanism] evaluations=1203 cap=2000 wall=55.1s
 case                         perturbation response_class  u_opt  comparable_at_u0  d_nadir_u0_vs_A0  nadir_mgdl_u0  nadir_mgdl_u1  nadir_mgdl_nonmono  peak_mgdl_u0  peak_mgdl_u1  peak_mgdl_nonmono  hypo70_burden_nonmono  hyper140_burden_nonmono  max_GlucK_mM
    a                                   A0         TypeII   0.50              True              0.00          74.30          67.72               -0.20        122.31         94.88              -0.23                   0.00                     0.00          8.70
    a            A1_alpha_feedback_clamped         TypeII   0.45              True             -0.34          73.96          67.25               -0.21        122.64         95.08              -0.23                   0.00                     0.00          8.74

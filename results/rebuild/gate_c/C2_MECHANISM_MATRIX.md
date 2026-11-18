@@ -31,7 +31,7 @@ Both are discontinuous functions of the trajectory. Each composite interior opti
 |---|---|---|
 | peak | 122.3 mg/dL | 94.9 mg/dL |
 | nadir | 74.3 mg/dL | 67.7 mg/dL |
-| minutes < 70 mg/dL | 0 | 106.5 |
+| minutes < 70 mg/dL | 0 | 106.0 |
 
 At u = 1, G(0) has already fallen to 70.5 mg/dL during the run-in.
 

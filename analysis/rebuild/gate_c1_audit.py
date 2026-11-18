@@ -74,7 +74,7 @@ def basal_alternatives():
     base = G.sm.BASE_PARAMS
     alts = {
         "B0_reference": {},
-        "B1_plasma_glucose_90": {"GlucH0": base["GlucH0"] * 90.0 / 82.40},
+        "B1_plasma_glucose_90": {"GlucH0": G.glucH0_for_plasma(90.0)},
         "B2_insulin_0.7x": {"InsuPV0": base["InsuPV0"] * 0.7},
         "B3_insulin_1.3x": {"InsuPV0": base["InsuPV0"] * 1.3},
         "B4_glucagon_0.7x": {"Cgon0": base["Cgon0"] * 0.7},

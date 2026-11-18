@@ -13,7 +13,7 @@
 | `python gate_c2_mechanism.py` | C2_TARGETED_ABLATIONS.csv, C2_TARGETED_ABLATIONS_SUMMARY.csv, C2_TRAJECTORY_COMPARISONS/*.png/.csv, gate_c2_mechanism.log | 1,203 | 54 s |
 | `python gate_c3_stage1.py` | C3_STAGED_ROBUSTNESS.csv, gate_c3_stage1.log | 840 | 32 s |
 
-- **Total:** 4,287 evaluations, about 3.5 min on 2 cores.
+- **Total:** 4,287 evaluations per full run, about 3.5 min on 2 cores. The scripts were run twice (before and after the review fixes), for 8,574 cumulative evaluations; see `C3_COMPUTE_BUDGET.md`.
 - **Compute log:** `compute_log.csv`.
 - **Shared helpers:** `gate_c_common.py`.
 

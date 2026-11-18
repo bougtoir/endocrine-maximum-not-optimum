@@ -1,0 +1,68 @@
+[gate_c1_audit] evaluations=2244 cap=1500 wall=113.7s
+                                  any_clipped_frac_t>=0
+intervention                                           
+glucagon_secretion                             0.000000
+glucagon_secretion_inhibition                  0.000000
+glucagon_signal_hepatic                        0.000000
+glucagon_signal_inhibition                     0.000000
+insulin_secretion                              0.000000
+insulin_secretion_inhibition                   1.000000
+insulin_signal_global                          0.642263
+insulin_signal_global_inhibition               0.000000
+insulin_signal_hepatic                         0.667221
+insulin_signal_peripheral                      0.000000
+           basal_alt challenge                  intervention response_class  u_opt
+        B0_reference     ivitt  insulin_secretion_inhibition          TypeI   1.00
+        B0_reference     ivitt             insulin_secretion          Type0   0.00
+        B0_reference     ivitt glucagon_secretion_inhibition          Type0   0.00
+        B0_reference     civii  insulin_secretion_inhibition         TypeII   0.45
+        B0_reference     civii             insulin_secretion          Type0   0.00
+        B0_reference     civii glucagon_secretion_inhibition          Type0   0.00
+        B0_reference      ogtt  insulin_secretion_inhibition          Type0   0.00
+        B0_reference      ogtt             insulin_secretion         TypeII   0.50
+        B0_reference      ogtt glucagon_secretion_inhibition         TypeII   0.85
+B1_plasma_glucose_90     ivitt  insulin_secretion_inhibition          TypeI   0.90
+B1_plasma_glucose_90     ivitt             insulin_secretion          Type0   0.00
+B1_plasma_glucose_90     ivitt glucagon_secretion_inhibition          Type0   0.00
+B1_plasma_glucose_90     civii  insulin_secretion_inhibition         TypeII   0.15
+B1_plasma_glucose_90     civii             insulin_secretion          Type0   0.00
+B1_plasma_glucose_90     civii glucagon_secretion_inhibition          Type0   0.00
+B1_plasma_glucose_90      ogtt  insulin_secretion_inhibition          Type0   0.00
+B1_plasma_glucose_90      ogtt             insulin_secretion          TypeI   1.00
+B1_plasma_glucose_90      ogtt glucagon_secretion_inhibition          TypeI   0.90
+     B2_insulin_0.7x     ivitt  insulin_secretion_inhibition          TypeI   1.00
+     B2_insulin_0.7x     ivitt             insulin_secretion          Type0   0.00
+     B2_insulin_0.7x     ivitt glucagon_secretion_inhibition          Type0   0.00
+     B2_insulin_0.7x     civii  insulin_secretion_inhibition          TypeI   0.90
+     B2_insulin_0.7x     civii             insulin_secretion          Type0   0.00
+     B2_insulin_0.7x     civii glucagon_secretion_inhibition          Type0   0.00
+     B2_insulin_0.7x      ogtt  insulin_secretion_inhibition          Type0   0.00
+     B2_insulin_0.7x      ogtt             insulin_secretion         TypeII   0.50
+     B2_insulin_0.7x      ogtt glucagon_secretion_inhibition         TypeII   0.85
+     B3_insulin_1.3x     ivitt  insulin_secretion_inhibition          TypeI   1.00
+     B3_insulin_1.3x     ivitt             insulin_secretion          Type0   0.00
+     B3_insulin_1.3x     ivitt glucagon_secretion_inhibition          Type0   0.00
+     B3_insulin_1.3x     civii  insulin_secretion_inhibition         TypeII   0.20
+     B3_insulin_1.3x     civii             insulin_secretion          Type0   0.00
+     B3_insulin_1.3x     civii glucagon_secretion_inhibition          Type0   0.00
+     B3_insulin_1.3x      ogtt  insulin_secretion_inhibition          Type0   0.00
+     B3_insulin_1.3x      ogtt             insulin_secretion         TypeII   0.50
+     B3_insulin_1.3x      ogtt glucagon_secretion_inhibition         TypeII   0.85
+    B4_glucagon_0.7x     ivitt  insulin_secretion_inhibition          TypeI   1.00
+    B4_glucagon_0.7x     ivitt             insulin_secretion          Type0   0.00
+    B4_glucagon_0.7x     ivitt glucagon_secretion_inhibition          Type0   0.00
+    B4_glucagon_0.7x     civii  insulin_secretion_inhibition         TypeII   0.45
+    B4_glucagon_0.7x     civii             insulin_secretion          Type0   0.00
+    B4_glucagon_0.7x     civii glucagon_secretion_inhibition          Type0   0.00
+    B4_glucagon_0.7x      ogtt  insulin_secretion_inhibition          Type0   0.00
+    B4_glucagon_0.7x      ogtt             insulin_secretion         TypeII   0.50
+    B4_glucagon_0.7x      ogtt glucagon_secretion_inhibition         TypeII   0.85
+    B5_glucagon_1.3x     ivitt  insulin_secretion_inhibition          TypeI   1.00
+    B5_glucagon_1.3x     ivitt             insulin_secretion          Type0   0.00
+    B5_glucagon_1.3x     ivitt glucagon_secretion_inhibition          Type0   0.00
+    B5_glucagon_1.3x     civii  insulin_secretion_inhibition         TypeII   0.45
+    B5_glucagon_1.3x     civii             insulin_secretion          Type0   0.00
+    B5_glucagon_1.3x     civii glucagon_secretion_inhibition          Type0   0.00
+    B5_glucagon_1.3x      ogtt  insulin_secretion_inhibition          Type0   0.00
+    B5_glucagon_1.3x      ogtt             insulin_secretion         TypeII   0.50
+    B5_glucagon_1.3x      ogtt glucagon_secretion_inhibition         TypeII   0.85

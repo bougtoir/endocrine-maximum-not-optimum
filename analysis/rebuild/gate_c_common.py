@@ -96,8 +96,8 @@ def direct_outcomes(t, Yobs, g_pre=None):
     out = dict(
         g_pre_mgdl=gpre, g0_mgdl=g[0], drift_pre_mgdl=g[0] - gpre,
         nadir_mgdl=g.min(), t_nadir_min=tu[g.argmin()], peak_mgdl=g.max(), t_peak_min=tu[g.argmax()],
-        min_below70=float((g < 70).sum() * dt), min_below54=float((g < 54).sum() * dt),
-        min_above140=float((g > 140).sum() * dt), min_above180=float((g > 180).sum() * dt),
+        min_below70=float((g[:-1] < 70).sum() * dt), min_below54=float((g[:-1] < 54).sum() * dt),
+        min_above140=float((g[:-1] > 140).sum() * dt), min_above180=float((g[:-1] > 180).sum() * dt),
         hypo70_burden=float(np.trapezoid(np.clip(70 - g, 0, None), tu)),
         hyper140_burden=float(np.trapezoid(np.clip(g - 140, 0, None), tu)),
         g_end_mgdl=g[-1], end_minus_pre_mgdl=g[-1] - gpre,
@@ -132,3 +132,12 @@ class Budget:
             w.writerow([self.name, n, self.cap, round(time.time() - self.t0, 1),
                         time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())])
         print(f"[{self.name}] evaluations={n} cap={self.cap} wall={time.time()-self.t0:.1f}s")
+
+
+def glucH0_for_plasma(target_mgdl, cfg="C"):
+    """GlucH0 giving an initial observed plasma glucose of exactly target_mgdl (GlucPV0 is not proportional to GlucH0)."""
+    from scipy.optimize import brentq
+    def f(gh):
+        p = dict(sm.BASE_PARAMS); p["GlucH0"] = gh
+        return sm.initial_state(p)[GI] * obs_factor(cfg) * MMOL_TO_MGDL - target_mgdl
+    return brentq(f, 3.0, 9.0, xtol=1e-10)

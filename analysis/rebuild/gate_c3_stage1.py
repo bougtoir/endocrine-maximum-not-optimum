@@ -8,7 +8,7 @@ from gate_c2_mechanism import sim
 
 B = G.sm.BASE_PARAMS
 TAU = [0.5, 0.75, 1.0, 1.5, 2.0]
-BASAL = {"82.4": None, "90": B["GlucH0"] * 90.0 / 82.40}
+BASAL = {"82.4": None, "90": G.glucH0_for_plasma(90.0)}
 DOSE = {"50g": 277.78, "75g": 416.67, "100g": 555.56}
 KPP = [0.5, 1.0, 2.0]   # potentiator rate multiplier (Stage 1 OAT at reference basal/dose only)
 
