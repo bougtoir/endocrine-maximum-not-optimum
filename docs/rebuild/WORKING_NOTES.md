@@ -65,3 +65,7 @@ Reuse corrected_scan_endpoints.csv (configs H/S/O/C, 21-pt grid) for recomputing
   Only weight-independent interior dominance: fasting TypeIII plateaus (negligible magnitude).
 - Overlap (GATE_B_ENDPOINT_OVERLAP.csv): SD~RMSD rho .93 pooled (1.00 OGTT), hypo~undershoot .83; IVGTT RMSD~recovery -.99 -> double counting of variability & hypo.
 - Gate B verdict planned: FAIL (confirmatory) -> stop; Gate C not started confirmatorily.
+
+## Gate C (exploratory) — started 2026-11-18 on branch devin/1794964179-joe-gate-c-exploratory (from a770f49). Plan: results/rebuild/gate_c/GATE_C_PLAN.md.
+User accepted no recommendation explicitly; instead supplied exploratory Gate C prompt (docs/rebuild/JOE_GATE_C_EXPLORATORY_DEVIN_PROMPT.txt).
+Gate B FAIL remains recorded; Gate C is exploratory. Calibrated decision categories: SCIENTIFIC DISCOVERY GO / CONDITIONAL GO / METHODS-THEORY PIVOT / NO-GO-FREEZE; separately JOE RESUBMISSION READY / CONDITIONAL / NOT READY.
