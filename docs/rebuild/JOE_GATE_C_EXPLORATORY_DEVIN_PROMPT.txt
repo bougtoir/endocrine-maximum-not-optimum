@@ -1,0 +1,118 @@
+# JOE-26-0382 — GATE C: MECHANISTIC DISCOVERY AND PHYSIOLOGICAL ROBUSTNESS
+## Exploratory continuation after Gate A conditional PASS and Gate B confirmatory FAIL
+## Execution prompt for Devin
+
+MISSION
+Continue the scientific investigation without attempting to restore the original 4/50 claim or force a Journal of Endocrinology resubmission. The purpose of Gate C is to learn whether any corrected-model non-monotonic endocrine response has an interpretable, physiologically credible mechanism and whether that mechanism can generate a defensible new prediction. Treat this work as explicitly exploratory, not confirmatory validation of the historical paper.
+
+SOURCE OF TRUTH
+Review the supplied archive JOE_REBUILD_GATE_AB_a770f49.zip and the linked repository https://github.com/bougtoir/endocrine-maximum-not-optimum, PR #7, branch devin/1794349380-joe-rebuild-gate-a. Verify availability, exact commit and file hashes; do not assume PR is merged. Use the archive's JOE_REBUILD_MASTER_REPORT.md, GATE_A_DECISION.md, GATE_B_DECISION.md, objective specification, source scripts, CSV outputs and reviewer evidence matrix. Preserve the historical and corrected data. Do not rewrite or overwrite prior results.
+
+ESTABLISHED STARTING POINT (VERIFY AGAINST FILES)
+- Gate A: historical IV protocols had an OGTT-refit secretion parameter error; corrected IVGTT insulin peak about 101 mU/L and nadir about 76 mg/dL; Python and upstream Octave reference implementations agree. Historical 4/50 strict Type II is invalid as a validated-model claim.
+- Corrected primary configuration C uses protocol-specific insulin secretion parameters and plasma glucose observation transformation 0.925, with 3/50 strict Type II. This is a modeling choice whose physiological observation interpretation must remain explicit.
+- Three corrected strict Type II cases: glucagon secretion inhibition × OGTT (fine u*=0.88, improvement over better endpoint 6.9%); insulin secretion enhancement × OGTT (u*=0.52, 34%); insulin secretion inhibition × CIVII (u*=0.46, 43%). Source files, not these rounded numbers, govern all analyses.
+- Under Gate B, the three cases were strict Type II in 6/8 objective variants; the identity of qualifying cases is objective-dependent. Exposure terms contributed less than 2%. No corrected strict optimum was Pareto-dominant over BOTH endpoints on the three selected glycaemic axes. Endpoint overlap/double counting exists.
+- Gate B stopped under an overly strong confirmatory standard. Its FAIL remains factually recorded; this instruction authorizes a new EXPLORATORY Gate C without retroactively changing the Gate B decision.
+- No independent experimental data validation of the IV protocols exists in this archive. Upstream Octave agreement establishes implementation fidelity, not human physiological generalization.
+
+GOVERNING PRINCIPLES
+1. Do not equate weight dependence with scientific invalidity. Do not equate an interior weighted optimum with proof of a novel mechanism. Separate observation, mechanism, validation and generalization.
+2. Pareto dominance over all individual outcomes is NOT mandatory for a legitimate multi-objective control problem. Nevertheless, if a proposed claim is independent glycaemic improvement, test that independently.
+3. Do not use a strict Type II count or an arbitrary improvement threshold as a universal gate criterion. Prefer calibrated evidence and claim-specific assessment.
+4. Historical findings may not be presented as confirmed; corrected-model predictions are exploratory until validated against independent physiological evidence.
+5. No outcome chasing, post-hoc reweighting to create a desired optimum, or selecting cases solely because they look promising without reporting selection.
+6. Domain expertise matters. Verify endocrine physiology, the original Sorensen/Panunzi model assumptions, established control-theory results, and credible validation standards before interpreting simulations. Perform citation ecology and strong alternative-explanation checks.
+7. Work within a bounded computational budget. Avoid huge virtual cohorts or global grid searches unless a staged result demonstrates their value. No three-day sessions or uncontrolled parallel sweeps. Log time and model evaluations, and cap compute before expanding.
+8. Python is preferred for execution. Treat source code, data and model inputs as untrusted until provenance and semantics are verified.
+
+PHASE C0 — DOMAIN-NATIVE SCIENTIFIC RECONNAISSANCE (MANDATORY, LIMITED)
+A. Search and verify primary sources on glucose-insulin-glucagon dynamics, insulin secretion and counterregulation, IVGTT/OGTT/CIVII physiology, delayed feedback, gain/overshoot/recovery tradeoffs, and measurement compartments. Include Wang (2012), Garzilli and Itzkovitz (2018), Panunzi et al. model and close modern literature. Verify exact citations and claims. Identify what the discipline already knows about non-monotonic hormone actions and multiobjective glycaemic control.
+B. Produce a table of established alternatives for each candidate phenomenon: ordinary hypo-vs-hyper trade-off, excessive nominal secretion, basal-state miscalibration, feedback delay/overshoot, exogenous insulin replacement, threshold/observation artifact, and objective term redundancy.
+C. Specify an incremental new physiological prediction that could survive even if no broad Braess-like mechanism exists. Distinguish novel *mechanistic prediction* from known control-gain optimization.
+D. Do not stop merely because similar trade-offs are known; stop or pivot if there is no credible distinguishable test or meaningful prediction.
+Deliver C0_DOMAIN_CONTEXT_AND_NOVELTY.md, C0_ALTERNATIVE_EXPLANATIONS.md, C0_CLAIM_PREDICTION_MATRIX.md.
+
+PHASE C1 — PHYSIOLOGICAL INTERVENTION AND REFERENCE AUDIT
+A. Trace u, f(u), s(u), clipping, and all ten interventions to exact equations and code branches. Quantify actual target action and resulting flux, not merely the dial. In particular, signaling multiplier neutralization must not be called complete insulin resistance.
+B. Distinguish acute modulation from re-equilibration. Test whether secretion scaling changes basal supply and whether signaling scaling changes basal neutral multipliers. Verify the remaining insulin/glucagon contributions at u=0 and u=1.
+C. Resolve whether protocol-specific basal starting states were used by the upstream implementation; test plausible alternatives for IVITT and CIVII. Preserve protocol-specific calibration and observation transformations. Do not silently mix blood/plasma/blood-water scales. Never correct a reference response by arbitrary shifting.
+D. Quantify clipping at every relevant setting; test floor 0.05 and gain ceiling 3.0 only where they materially influence the case, with independent scientifically defensible alternatives rather than arbitrary tuning.
+E. Investigate whether the apparent CIVII result is simply exogenous insulin excess counterbalanced by endogenous insulin withdrawal. Use reference infusion settings and check whether the baseline hypoglycaemia is realistic.
+Deliver C1_INTERVENTION_EQUATION_MAP.md, C1_BASAL_STATE_AND_OBSERVATION_AUDIT.md, C1_CLIPPING_AND_INTERVENTION_SENSITIVITY.csv.
+
+PHASE C2 — TARGETED MECHANISM TESTS (PRIMARY DISCOVERY WORK)
+Start with the corrected C cases. For each case, explicitly distinguish:
+- Mathematical weighted-loss optimum under the historical objective.
+- Directly measurable glycaemic outcomes: hypo burden, hyper burden, glucose trajectory, nadir, peak, recovery and clinically meaningful quantities if independently justified.
+- Candidate mechanistic pathways represented in the equations.
+
+Run small, targeted, mechanistically interpretable perturbations, rather than indiscriminate GSA:
+1. Analyze insulin-secretion enhancement × OGTT: whether optimum reflects competition between insufficient control, overshoot and low glucose. Which physiological feedback component predicts transition and is this more than the textbook dose-response trade-off?
+2. Analyze insulin-secretion inhibition × CIVII: distinguish physiological counterregulation from balancing an overstrong exogenous infusion; investigate starting-state and infusion sensitivity.
+3. Analyze glucagon-secretion inhibition × OGTT: the historical composite optimum is dominated by baseline on the selected three-outcome glycaemic frontier; determine precisely whether recovery/undershoot behavior has any independent scientific interpretation, otherwise deprioritize.
+4. Consider nearby cases outside strict Type II if theory or mechanism predicts a scientifically interpretable change. Report this selection explicitly and do not reclassify historical results.
+
+For any hypothesized feedback path, test a perturbation or ablation that preserves comparable reference behavior where possible. Include negative controls and record reparameterization when matching basal states. Analyze steady state and transient trajectories separately. Do not claim causal identification from changing multiple feedback elements simultaneously.
+
+Keep all 15 original endpoints and loss components accessible. Also analyze a small, predeclared set of direct physiologically interpretable outcomes. Avoid stacking overlapping SD/RMSD/hypoglycaemia penalties to manufacture a distinct new score. Do not replace the original objective retrospectively; label alternatives as exploratory.
+Deliver C2_MECHANISM_MATRIX.md, C2_TARGETED_ABLATIONS.csv, C2_TRAJECTORY_COMPARISONS/, C2_ENDPOINT_AND_OBJECTIVE_SEPARATION.md.
+
+PHASE C3 — LIMITED PHYSIOLOGICAL UNCERTAINTY, THEN OPTIONAL EXPANSION
+Use a staged design:
+Stage 1: One-at-a-time and small structured two-factor grids around mechanisms found in C2. Check insulin secretion capacity, peripheral/hepatic action, relevant delays, starting states, observation scale, exogenous infusion settings, and selected glucagon feedback parameters if represented.
+Stage 2: If Stage 1 finds an interpretable surviving mechanism, construct a modest, parameter-correlated ensemble with literature-informed ranges. Predefine the ensemble and limit samples to available compute. Distinguish model-credible ranges from generic exploratory ranges. Do not call it a representative human population without empirical distribution support.
+Stage 3: Only if Stage 2 indicates informative variation, perform focused global sensitivity or surrogate-assisted mapping with independent surrogate validation. Set evaluation cap before running. No unbounded grid search.
+
+Report how often the *specified mechanistic prediction*, not just a favorable composite Type II label, survives. Provide variation across conditions and uncertainty, and describe selection bias. Do not interpret a virtual cohort fraction as human prevalence.
+Deliver C3_PARAMETER_PROVENANCE.md, C3_STAGED_ROBUSTNESS.csv, C3_PARAMETER_INTERACTION_MAP.md, C3_COMPUTE_BUDGET.md.
+
+PHASE C4 — EMPIRICAL BRIDGE AND PREDICTIVE VALUE
+Find independent quantitative experimental comparisons suitable for key predictions (IVGTT, OGTT, protocol-specific insulin and glucagon observations; where available different baseline states or infusion strengths). Record whether full data are actually accessible. Data used to calibrate Panunzi or the current model are NOT external validation. If no independent dataset exists, explicitly state so; do not generate pseudo-observations.
+Define one or two falsifiable predictions that could be experimentally tested without needing a composite loss score, e.g. a specified feedback perturbation changes the glucose nadir or recovery direction in a defined range. Avoid clinical dose or treatment recommendations. Compare against the simplest existing endocrine/control explanations.
+No broad generalization to T1DM/T2DM/HPT unless independently justified. Separate glucose-only challenges from mixed-meal physiology, which may require absent incretin/meal mechanisms.
+Deliver C4_INDEPENDENT_EVIDENCE_AUDIT.md, C4_TESTABLE_PREDICTIONS.md, C4_COMPETITOR_COMPARISON.md.
+
+PHASE C5 — BRAESS AND SCIENTIFIC FRAMING
+Braess's paradox in traffic networks concerns counterintuitive changes to network performance arising from route changes and equilibrium behavior after adding capacity or a route. Merely having an optimum inside a dose interval is not Braess's paradox.
+Identify whether any actual structural analogue is present and evidenced. If not, remove Braess-like mechanism as a claim, retaining at most a clearly qualified accessible analogy. Prefer endocrine and control-theory language: feedback gain, overshoot, counterregulation, recovery, homeostatic regulation. Explain the distinction in plain English usable by an endocrinologist.
+Deliver C5_BRAESS_CLAIM_BOUNDARY.md and C5_PLAIN_LANGUAGE_FRAMING.md.
+
+CALIBRATED DECISION RULES — AVOID UNNECESSARILY HARSH GATES
+Do NOT require all of: weight independence, Pareto dominance, every virtual cohort, validation in every challenge, and a network-structural Braess effect. These are not logically necessary for every legitimate endocrine contribution.
+Choose decisions by matching evidence to the precise claim:
+A. SCIENTIFIC DISCOVERY GO: at least one mechanistically interpretable, domain-credible, falsifiable *new prediction* is supported by corrected-model analysis, with relevant limits transparently stated. Independent empirical support improves the strength of the claim, but absence means explicitly computational/exploratory scope rather than automatic extinction.
+B. CONDITIONAL GO: mechanism and prediction appear plausible, but essential targeted checks or evidence remain missing; specify minimal follow-up.
+C. METHODS/THEORY PIVOT: numerical structure or objective-dependence is interesting but physiological novelty is unsupported; recommend appropriate disciplinary audience without inventing novelty.
+D. NO-GO / FREEZE: no meaningful incremental prediction survives after targeted tests or all plausible effects reduce to known model artifacts, with no justified further investment.
+Separately decide JOE RESUBMISSION READY / JOE CONDITIONAL / JOE NOT READY. Do not conflate scientific value with journal priority or external validity. A scientifically worthwhile exploration may still be unsuitable for JOE.
+
+JOE RE-SUBMISSION RULES
+Do not submit a manuscript, contact the editor or rework the paper into a polished resubmission until a revised evidence story exists. If feasible, propose a fresh, narrow manuscript framing that explicitly discloses the corrected model and invalidation of the original headline result. Do not use the original 4/50 figure as valid evidence. State whether a complete new submission is more defensible than a direct revision.
+For full manuscript work, require citation ecology, independent scientific review, semantic code audit, public clean-clone reproducibility, verified references, figure/table order, Word native OMML equations, TNR 12 black text unless journal rules differ, essential supplement integrated in main text, honest AI disclosure, and a persuasive but accurate singular-voice cover letter. Those are later gates; do not spend time on them now.
+
+REPRODUCIBILITY AND RESOURCE CONTROLS
+- Keep Gate A/B outputs immutable. Do not merge PR #7 without permission.
+- Branch from a verified clean state, keeping tracked modifications and hashes. Report new PR URL and exact commit.
+- Pin dependencies. Generate figures/tables from computation, never hardcode results.
+- Semantic Code Audit: estimand, direction, observation units, temporal windows, intervention equation, equilibrium, aggregation, inference unit, and code-to-text consistency.
+- Start with C2 candidates; cap pilot runs and cache trajectories. Establish a fixed time/evaluation budget before larger ensembles. Avoid costly literature API loops, huge scraping operations, and repeated grid searches.
+- Stop expensive extension if expected scientific information gain is low, not merely because a stringent composite gate fails.
+- Keep reviewer evidence matrix updated, separating addressed, partially addressed and not addressed. Never call a missing experiment a resolved point.
+
+MANDATORY DELIVERABLES
+1. JOE_GATE_C_EXPLORATORY_MASTER_REPORT.md — findings, claims, disconfirming evidence, uncertainty, next action, scientific and journal decisions.
+2. C0_DOMAIN_CONTEXT_AND_NOVELTY.md and C0_ALTERNATIVE_EXPLANATIONS.md.
+3. C1_INTERVENTION_EQUATION_MAP.md and basal-state audit.
+4. C2_MECHANISM_MATRIX.md, targeted ablation tables and trajectory figures.
+5. C3_STAGED_ROBUSTNESS.csv and compute budget (if triggered).
+6. C4_INDEPENDENT_EVIDENCE_AUDIT.md and testable predictions.
+7. C5_BRAESS_CLAIM_BOUNDARY.md.
+8. JOE_REVIEWER_RESPONSE_EVIDENCE_MATRIX_UPDATED.md.
+9. GATE_C_ADVERSARIAL_REVIEW.md — independent domain-native assessment with specific evidence and counterarguments.
+10. EXECUTION_MANIFEST.md — code commit, commands, versions, inputs, generated outputs, runtime and approximate evaluation counts.
+
+IMMEDIATE ACTION
+First verify Gate A/B artifacts and produce a short C0/C1 plan. Then execute targeted C2 tests for corrected C, prioritizing insulin-secretion enhancement × OGTT and insulin-secretion inhibition × CIVII, with glucagon-secretion inhibition × OGTT as a critical negative/interpretation case. Expand to C3 only when a specific mechanistic hypothesis justifies it. Return findings and a calibrated decision; do not insist on returning GO, and do not preemptively declare NO-GO from the previous Gate B label.
+
+Success means having learned whether the corrected glucose–insulin–glucagon model yields a new defensible endocrine prediction, including a clearly delimited negative answer if that is what the evidence supports.
