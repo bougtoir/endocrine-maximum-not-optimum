@@ -65,3 +65,19 @@ Each perturbation is crossed with the full 11-point u grid. A, P, C and N rows a
 - Base grid: 3 cases × 11 u × about 18 perturbations ≈ 600 evaluations.
 - Trajectories are cached for u ∈ {0, u*, 1} of A0.
 - Cap: 2,000 evaluations.
+
+## Addendum (written after C1 and before any C2 run)
+
+C1 found that the two secretion interventions are not basal-neutral. They act from t=−30, so glucose has already drifted by t=0:
+
+| case | G(0) at u=1 | vs basal 82.4 mg/dL |
+|---|---|---|
+| (a) `insulin_secretion` × OGTT | 70.5 mg/dL | −11.9 |
+| (c) `glucagon_secretion_inhibition` × OGTT | 70.0 mg/dL | −12.4 |
+| (b) `insulin_secretion_inhibition` × CIVII | 97.9 mg/dL | +15.5 |
+
+The historical endpoint code measures recovery and undershoot relative to G(0), that is, relative to this drifted value.
+
+One protocol check is therefore added. **P3** starts from the steady state re-equilibrated with the intervention active, using a 3000-min pre-run with protocol parameters and no challenge input. The intervention stays on throughout. P3 separates chronic modulation from the acute run-in.
+
+P1 (onset at t=0) and P3 together bracket the run-in artifact. Neither one replaces the historical protocol. Both are reported as protocol checks.
