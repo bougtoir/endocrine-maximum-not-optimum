@@ -77,3 +77,6 @@ Gate B FAIL remains recorded; Gate C is exploratory. Calibrated decision categor
   a: TypeII robust to preserved-basal ablations; u* moves with insulin-action delay (tau x0.5 ->0.70, x2 ->0.30) and potentiator speed; = gain-delay trade-off (known control). 
   b: u* tracks infusion non-smoothly (x0.5 .70, x0.75 .85, x1 .45, x1.25 .75, x1.6 TypeI); counterregulation clamp -> TypeI (non-comparable); exogenous-excess vs endogenous withdrawal, threshold driven.
   c: P1 (onset t=0) and P3 (re-equilibrated) -> Type0: run-in artifact. A2 -> TypeIII.
+- C3 Stage 1 (840 evals): case a, u70 (u where nadir crosses 70) and u* decrease monotonically with tauInsu only at basal 82.4 + 100 g (u70 .686,.595,.519,.395,.303); at 50/75 g non-monotone; at basal 90 nadir never <70 -> TypeI everywhere (prediction undefined). Peaks/nadirs monotone in u everywhere. Stage 2/3 NOT triggered.
+- Crossref (raw JSON in data/raw/literature/crossref_gate_c): Garzilli & Itzkovitz 2018 Sci Rep 8 doi 10.1038/s41598-018-29084-4; Wang 2012 JRSI 9:2723-2734 doi 10.1098/rsif.2012.0244; Sacca 1979 Diabetes 28:533-536 doi 10.2337/diabetes.28.6.533 (candidate for thesis CIVII source, match unverified); Gerich 1979 AJP 236:E380 doi 10.1152/ajpendo.1979.236.4.e380 (thesis cites Gerich 1980; match unverified).
+- Planned decision: C. METHODS/THEORY PIVOT (or D) + JOE NOT READY.
